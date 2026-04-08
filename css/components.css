@@ -493,6 +493,28 @@
   border-top: 1px solid rgba(197, 213, 192, 0.2);
 }
 
+/* ===== About grid ===== */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+@media (max-width: 767px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .about-grid img {
+    max-width: 280px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
 /* ===== Publication list ===== */
 
 .publication {
