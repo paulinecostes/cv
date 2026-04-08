@@ -493,6 +493,27 @@
   border-top: 1px solid rgba(197, 213, 192, 0.2);
 }
 
+/* ===== Conference grid ===== */
+
+.conf-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+@media (max-width: 767px) {
+  .conf-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .conf-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== About grid ===== */
 
 .about-grid {
