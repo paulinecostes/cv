@@ -144,6 +144,20 @@
   .burger.open .burger__line:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
+
+  /* Tables: compact on mobile */
+  table th,
+  table td {
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
+    font-size: var(--text-tag);
+  }
+
+  /* Hide duration column on mobile */
+  table th:last-child,
+  table td:last-child {
+    display: none;
+  }
 }
 
 /* ===== Cards ===== */
