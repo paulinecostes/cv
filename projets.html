@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projets de recherche et experiences de terrain de Pauline Costes.">
+  <title>Projets - Pauline Costes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css?v=2">
+  <link rel="stylesheet" href="css/base.css?v=2">
+  <link rel="stylesheet" href="css/components.css?v=2">
+  <link rel="stylesheet" href="css/layout.css?v=2">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">Pauline Costes</a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+      <div class="nav__links">
+        <button class="nav__close" aria-label="Fermer le menu">&times;</button>
+        <a href="index.html#parcours" class="nav__link">Parcours</a>
+        <a href="projets.html" class="nav__link nav__link--active">Projets</a>
+        <a href="publications.html" class="nav__link">Publications & communications</a>
+        <a href="index.html#contact" class="nav__link">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Page header -->
+    <div class="page-header">
+      <div class="container">
+        <h1>Projets</h1>
+        <p>Mes principales experiences de recherche et de terrain.</p>
+      </div>
+    </div>
+
+    <!-- Recherche principale -->
+    <section class="section">
+      <div class="container">
+        <h2 style="margin-bottom: var(--space-lg);">Recherche</h2>
+        <div class="cards-grid">
+
+          <!-- Doctorat -->
+          <div class="card">
+            <div class="card__image">
+              <img src="floue_m.jpg" alt="Experience biomecanique sur la trompe d'elephant au ZooParc de Beauval">
+            </div>
+            <button class="accordion__trigger" aria-expanded="true">
+              <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                  <h3 class="card__title">Ethologie morpho-fonctionnelle de la trompe des elephants</h3>
+                  <p class="card__meta">CNRS / MNHN, Paris &middot; 11/2021 &ndash; 10/2024</p>
+                  <p class="card__description">De la biologie vers la robotique : etude du fonctionnement de la trompe des elephants.</p>
+                </div>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="accordion__content open">
+              <div style="padding-top: var(--space-md); border-top: 1px solid var(--green-200); margin-top: var(--space-md);">
+                <p class="card__description">
+                  Doctorat mene au sein des unites ISYEB &amp; MECADEV au Museum National d'Histoire Naturelle.
+                  Encadrants : Emmanuelle Pouydebat &amp; Raphael Cornette.
+                  Projet interdisciplinaire combinant ethologie, morphologie fonctionnelle et bio-inspiration pour la robotique.
+                  Inclut des missions de terrain au ZooParc de Beauval et en Cambodge (Elephant Valley Project, 10/2024).
+                </p>
+                <div style="margin-top: var(--space-md);">
+                  <strong style="font-size: var(--text-small); color: var(--earth-800);">Competences mobilisees</strong>
+                  <div class="tags" style="margin-top: var(--space-sm);">
+                    <span class="tag">Conception de protocoles</span>
+                    <span class="tag">Gestion de projet</span>
+                    <span class="tag">Encadrement</span>
+                    <span class="tag">Analyse de donnees (R)</span>
+                    <span class="tag">Cinematique 3D</span>
+                    <span class="tag">Redaction scientifique</span>
+                    <span class="tag">Communication (congres)</span>
+                  </div>
+                </div>
+                <div style="margin-top: var(--space-md); display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+                  <a href="these.html" class="btn btn-primary">D&eacute;couvrir les chapitres</a>
+                  <a href="https://theses.hal.science/tel-05023149" class="btn btn-secondary" target="_blank" rel="noopener">Lire sur HAL</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage elephants Namibie -->
+          <div class="card">
+            <button class="accordion__trigger" aria-expanded="true">
+              <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                  <h3 class="card__title">Quantification etho-fonctionnelle de l'utilisation de la trompe chez les elephants de savane</h3>
+                  <p class="card__meta">CNRS / MNHN, Paris &middot; 01/2021 &ndash; 06/2021</p>
+                  <p class="card__description">Stage de recherche en Namibie : etude comportementale sur les elephants d'Afrique.</p>
+                </div>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="accordion__content open">
+              <div style="padding-top: var(--space-md); border-top: 1px solid var(--green-200); margin-top: var(--space-md);">
+                <p class="card__description">
+                  Stage au sein des unites ISYEB &amp; MECADEV (CNRS/MNHN). Encadrants : Emmanuelle Pouydebat &amp; Raphael Cornette.
+                  Acquisition de donnees ethologiques sur l'utilisation de la trompe chez les elephants de savane d'Afrique
+                  en milieu naturel, en Namibie. Ce stage a directement precede et prepare le doctorat.
+                </p>
+                <div style="margin-top: var(--space-md);">
+                  <strong style="font-size: var(--text-small); color: var(--earth-800);">Competences mobilisees</strong>
+                  <div class="tags" style="margin-top: var(--space-sm);">
+                    <span class="tag">Observations comportementales</span>
+                    <span class="tag">Terrain international</span>
+                    <span class="tag">Collecte de donnees</span>
+                    <span class="tag">Ethologie</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage Talpa -->
+          <div class="card">
+            <button class="accordion__trigger" aria-expanded="true">
+              <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                  <h3 class="card__title">Etude morpho-anatomique 3D de l'humerus chez trois especes de Talpa</h3>
+                  <p class="card__meta">ISYEB, CNRS / MNHN, Paris &middot; 04/2020 &ndash; 06/2020</p>
+                  <p class="card__description">Dont la nouvelle espece decrite <em>Talpa aquitania</em>.</p>
+                </div>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="accordion__content open">
+              <div style="padding-top: var(--space-md); border-top: 1px solid var(--green-200); margin-top: var(--space-md);">
+                <p class="card__description">
+                  Stage au sein de l'unite ISYEB (CNRS/MNHN). Encadrants : Raphael Cornette &amp; Arnaud Delapre.
+                  Analyse comparative morpho-fonctionnelle de l'humerus et de l'ulna chez trois especes de taupes
+                  d'Europe de l'Ouest, incluant la nouvelle espece <em>Talpa aquitania</em>.
+                  Ce travail a abouti a une publication dans le <em>Journal of Anatomy</em> (2022, 12 citations).
+                </p>
+                <div style="margin-top: var(--space-md);">
+                  <strong style="font-size: var(--text-small); color: var(--earth-800);">Competences mobilisees</strong>
+                  <div class="tags" style="margin-top: var(--space-sm);">
+                    <span class="tag">Morphometrie 3D</span>
+                    <span class="tag">Anatomie comparee</span>
+                    <span class="tag">R</span>
+                    <span class="tag">Redaction scientifique</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage lamantins -->
+          <div class="card">
+            <button class="accordion__trigger" aria-expanded="true">
+              <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                  <h3 class="card__title">Analyse fonctionnelle des nageoires chez les lamantins des Antilles</h3>
+                  <p class="card__meta">PZP &amp; MECADEV, CNRS / MNHN, Paris &middot; 01/2019 &ndash; 04/2019</p>
+                  <p class="card__description">Stage de recherche en biomecanique des nageoires de siréniens.</p>
+                </div>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="accordion__content open">
+              <div style="padding-top: var(--space-md); border-top: 1px solid var(--green-200); margin-top: var(--space-md);">
+                <p class="card__description">
+                  Stage au sein des unites PZP &amp; MECADEV (CNRS/MNHN). Encadrants : Emmanuelle Pouydebat &amp; Luca Morino.
+                  Etude de l'utilisation fonctionnelle des nageoires chez les lamantins des Antilles.
+                  Ce stage a directement inspire l'encadrement d'un stagiaire en 2022 sur la lateralite chez la meme espece.
+                </p>
+                <div style="margin-top: var(--space-md);">
+                  <strong style="font-size: var(--text-small); color: var(--earth-800);">Competences mobilisees</strong>
+                  <div class="tags" style="margin-top: var(--space-sm);">
+                    <span class="tag">Biomecanique</span>
+                    <span class="tag">Observations comportementales</span>
+                    <span class="tag">Analyse de donnees</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage bien-etre -->
+          <div class="card">
+            <button class="accordion__trigger" aria-expanded="true">
+              <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                  <h3 class="card__title">Bien-etre animal en parc zoologique</h3>
+                  <p class="card__meta">Menagerie du Jardin des Plantes, CNRS / MNHN, Paris &middot; 06/2018 &ndash; 07/2018</p>
+                  <p class="card__description">Stage de recherche sur le bien-etre des animaux en captivite.</p>
+                </div>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="accordion__content open">
+              <div style="padding-top: var(--space-md); border-top: 1px solid var(--green-200); margin-top: var(--space-md);">
+                <p class="card__description">
+                  Stage a la Menagerie du Jardin des Plantes (CNRS/MNHN). Encadrante : Aude Bourgeois.
+                  Etude du bien-etre des animaux en milieu zoologique. Premier contact avec le milieu
+                  de la recherche en ethologie appliquee et la gestion des populations en captivite.
+                </p>
+                <div style="margin-top: var(--space-md);">
+                  <strong style="font-size: var(--text-small); color: var(--earth-800);">Competences mobilisees</strong>
+                  <div class="tags" style="margin-top: var(--space-sm);">
+                    <span class="tag">Bien-etre animal</span>
+                    <span class="tag">Observations en captivite</span>
+                    <span class="tag">Methodes ethologiques</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage mesanges -->
+          <div class="card">
+            <button class="accordion__trigger" aria-expanded="true">
+              <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                  <h3 class="card__title">Suivi de la reproduction des mesanges dans les Pyrenees</h3>
+                  <p class="card__meta">CNRS, Station de Moulis &middot; 05 &ndash; 07/2019</p>
+                  <p class="card__description">Stage de terrain : suivi de populations de mesanges charbonnieres et bleues.</p>
+                </div>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="accordion__content open">
+              <div style="padding-top: var(--space-md); border-top: 1px solid var(--green-200); margin-top: var(--space-md);">
+                <p class="card__description">
+                  Stage a la Station d'Ecologie Theorique et Experimentale de Moulis (Ariege). Encadrant : Maxime Cauchoix.
+                  Suivi de la reproduction des mesanges charbonnieres et bleues, capture d'individus,
+                  analyse de donnees issues de pieges photographiques.
+                </p>
+                <div style="margin-top: var(--space-md);">
+                  <strong style="font-size: var(--text-small); color: var(--earth-800);">Competences mobilisees</strong>
+                  <div class="tags" style="margin-top: var(--space-sm);">
+                    <span class="tag">Travail de terrain</span>
+                    <span class="tag">Suivi de populations</span>
+                    <span class="tag">Capture d'individus</span>
+                    <span class="tag">Pieges photographiques</span>
+                    <span class="tag">Travail en equipe</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Enseignement -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2 style="margin-bottom: var(--space-lg);">Enseignement &amp; encadrement</h2>
+        <div class="cards-grid">
+
+          <!-- TP Psychobiologie -->
+          <div class="card">
+            <button class="accordion__trigger" aria-expanded="true">
+              <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                  <h3 class="card__title">Chargee de TP : Psychobiologie comparee</h3>
+                  <p class="card__meta">Universite de Paris Nanterre &middot; 10 &ndash; 12/2023 &middot; 48 h</p>
+                  <p class="card__description">Licence 3, 2 groupes.</p>
+                </div>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="accordion__content open">
+              <div style="padding-top: var(--space-md); border-top: 1px solid var(--green-200); margin-top: var(--space-md);">
+                <p class="card__description">
+                  Encadrement de 2 groupes de Licence 3 sur 48h. Preparation et animation de seances
+                  de travaux pratiques en psychobiologie comparee. Adaptation du contenu au niveau
+                  des apprenants, evaluation des etudiants.
+                </p>
+                <div style="margin-top: var(--space-md);">
+                  <strong style="font-size: var(--text-small); color: var(--earth-800);">Competences mobilisees</strong>
+                  <div class="tags" style="margin-top: var(--space-sm);">
+                    <span class="tag">Pedagogie</span>
+                    <span class="tag">Encadrement d'etudiants</span>
+                    <span class="tag">Evaluation</span>
+                    <span class="tag">Adaptation au niveau</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TP Ordre et diversite -->
+          <div class="card">
+            <button class="accordion__trigger" aria-expanded="true">
+              <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                  <h3 class="card__title">Chargee de TP : Ordre &amp; Diversite du Vivant</h3>
+                  <p class="card__meta">Universite de Versailles Saint-Quentin &middot; 03/2023 &middot; 16 h</p>
+                  <p class="card__description">Licence 1, 4 groupes.</p>
+                </div>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="accordion__content open">
+              <div style="padding-top: var(--space-md); border-top: 1px solid var(--green-200); margin-top: var(--space-md);">
+                <p class="card__description">
+                  Encadrement de 4 groupes de Licence 1 sur 16h. Introduction a la systematique
+                  et a la diversite du monde du vivant. Premiere experience d'enseignement en
+                  biologie fondamentale pour des etudiants de premier cycle.
+                </p>
+                <div style="margin-top: var(--space-md);">
+                  <strong style="font-size: var(--text-small); color: var(--earth-800);">Competences mobilisees</strong>
+                  <div class="tags" style="margin-top: var(--space-sm);">
+                    <span class="tag">Pedagogie</span>
+                    <span class="tag">Vulgarisation</span>
+                    <span class="tag">Organisation</span>
+                    <span class="tag">Gestion de groupes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Encadrement stagiaire -->
+          <div class="card">
+            <button class="accordion__trigger" aria-expanded="true">
+              <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                  <h3 class="card__title">Encadrement de stagiaire : Lateralite chez les lamantins des Antilles</h3>
+                  <p class="card__meta">ZooParc de Beauval &amp; MECADEV, CNRS/MNHN &middot; 07/2022 &middot; 1 mois</p>
+                  <p class="card__description">Encadrement d'Antonin Jouve (benevole).</p>
+                </div>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="accordion__content open">
+              <div style="padding-top: var(--space-md); border-top: 1px solid var(--green-200); margin-top: var(--space-md);">
+                <p class="card__description">
+                  Conception et suivi d'un projet individuel portant sur la lateralite chez les lamantins des Antilles
+                  au ZooParc de Beauval. Accompagnement, formation aux methodes ethologiques,
+                  evaluation des competences et bienveillance.
+                </p>
+                <div style="margin-top: var(--space-md);">
+                  <strong style="font-size: var(--text-small); color: var(--earth-800);">Competences mobilisees</strong>
+                  <div class="tags" style="margin-top: var(--space-sm);">
+                    <span class="tag">Encadrement</span>
+                    <span class="tag">Formation</span>
+                    <span class="tag">Suivi de projet</span>
+                    <span class="tag">Bienveillance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mediation -->
+          <div class="card">
+            <button class="accordion__trigger" aria-expanded="true">
+              <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                  <h3 class="card__title">Mediation scientifique &amp; mentorat</h3>
+                  <p class="card__meta">Declics (FSER), Savanturiers (AFPER) &middot; 2022 &ndash; 2023</p>
+                  <p class="card__description">Vulgarisation scientifique aupres de lyceens et etudiants.</p>
+                </div>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="accordion__content open">
+              <div style="padding-top: var(--space-md); border-top: 1px solid var(--green-200); margin-top: var(--space-md);">
+                <p class="card__description">
+                  Mediation scientifique pour lyceens via le Cercle FSER (Declics, 12/2023, 4h) et
+                  mentorat via le Programme Savanturiers de l'AFPER (03&ndash;05/2022).
+                  Vulgarisation de la demarche scientifique et accompagnement personnalise de jeunes.
+                </p>
+                <div style="margin-top: var(--space-md);">
+                  <strong style="font-size: var(--text-small); color: var(--earth-800);">Competences mobilisees</strong>
+                  <div class="tags" style="margin-top: var(--space-sm);">
+                    <span class="tag">Vulgarisation</span>
+                    <span class="tag">Communication orale</span>
+                    <span class="tag">Accompagnement</span>
+                    <span class="tag">Motivation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <h3 class="footer__title">Contact</h3>
+          <div class="footer__item">
+            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:pauline.costes0@gmail.com">pauline.costes0@gmail.com</a>
+          </div>
+          <div class="footer__item">
+            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Montpellier, France</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__title">Navigation</h3>
+          <div class="footer__item"><a href="index.html">Accueil</a></div>
+          <div class="footer__item"><a href="index.html#parcours">Parcours</a></div>
+          <div class="footer__item"><a href="publications.html">Publications</a></div>
+        </div>
+      </div>
+      <p class="footer__copy">&copy; 2026 Pauline Costes</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
