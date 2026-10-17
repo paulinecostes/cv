@@ -776,15 +776,18 @@
   background: linear-gradient(to bottom, var(--green-900) 0 6px, var(--white) 6px 9px, var(--orange-500) 9px);
 }
 
-.tl__event--both .tl__label {
-  background: linear-gradient(90deg, var(--green-900), var(--orange-500)) content-box, var(--white);
-  -webkit-background-clip: text, padding-box;
-  background-clip: text, padding-box;
+.tl__gradient-text {
+  background-image: linear-gradient(90deg, var(--green-900), var(--orange-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--green-900); /* repli si le dégradé sur texte n'est pas pris en charge */
   -webkit-text-fill-color: transparent;
 }
 
 .tl__event--both .tl__label::before {
-  border-image: linear-gradient(to bottom, var(--green-900), var(--orange-500)) 1;
+  width: 1px;
+  border-left: none;
+  background: linear-gradient(to bottom, var(--green-900), var(--orange-500));
 }
 
 .tl-legend__item--both::before {
