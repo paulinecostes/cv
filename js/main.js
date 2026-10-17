@@ -63,9 +63,10 @@ function layoutPlot(plot) {
   ['up', 'down'].forEach(side => {
     const boxes = [...plot.querySelectorAll(`.tl__event--${side} .tl__label`)].map(label => {
       label.classList.remove('tl__label--flip');
-      const x = label.offsetLeft;
       const w = label.offsetWidth;
-      const flip = x + w > width - 2;
+      // offsetLeft ignore le translateX(-50%) des libellés centrés
+      const x = label.offsetLeft - (label.classList.contains('tl__label--fan') ? w / 2 : 0);
+      const flip = !label.classList.contains('tl__label--fan') && x + w > width - 2;
       label.classList.toggle('tl__label--flip', flip);
       return { label, left: flip ? x - w : x, right: flip ? x : x + w };
     }).sort((a, b) => a.left - b.left);
@@ -85,6 +86,34 @@ function layoutPlot(plot) {
 
   plot.style.setProperty('--nu', counts.up);
   plot.style.setProperty('--nd', counts.down);
+  drawFans(plot);
+}
+
+// Éventail : un trait de chaque repère vers le haut du libellé centré
+function drawFans(plot) {
+  plot.querySelectorAll('.tl__label--fan').forEach(label => {
+    const event = label.closest('.tl__event');
+    let svg = event.querySelector('.tl__fan');
+    if (!svg) {
+      svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.classList.add('tl__fan');
+      svg.setAttribute('aria-hidden', 'true');
+      event.appendChild(svg);
+    }
+    const p = plot.getBoundingClientRect();
+    const l = label.getBoundingClientRect();
+    const tx = l.left + l.width / 2 - p.left;
+    const ty = l.top - p.top;
+    svg.replaceChildren(...[...event.querySelectorAll('.tl__mark')].map(mark => {
+      const m = mark.getBoundingClientRect();
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', m.left + m.width / 2 - p.left);
+      line.setAttribute('y1', m.bottom - p.top);
+      line.setAttribute('x2', tx);
+      line.setAttribute('y2', ty);
+      return line;
+    }));
+  });
 }
 
 if (timeline) {
