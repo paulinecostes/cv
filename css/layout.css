@@ -229,6 +229,45 @@ main {
   }
 }
 
+/* ===== Galerie photos ===== */
+
+.gallery {
+  display: grid;
+  gap: var(--space-md);
+  margin: 0;
+}
+
+.gallery__item {
+  margin: 0;
+}
+
+.gallery__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery__item figcaption {
+  margin-top: var(--space-sm);
+  font-size: var(--text-small);
+  color: var(--earth-600);
+}
+
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .gallery__item img {
+    height: 340px;
+    aspect-ratio: auto;
+  }
+}
+
 /* ===== Page header (sub-pages) ===== */
 
 .page-header {
