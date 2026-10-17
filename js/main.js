@@ -68,16 +68,38 @@ function layoutPlot(plot) {
       const x = label.offsetLeft - (label.classList.contains('tl__label--fan') ? w / 2 : 0);
       const flip = !label.classList.contains('tl__label--fan') && x + w > width - 2;
       label.classList.toggle('tl__label--flip', flip);
-      return { label, left: flip ? x - w : x, right: flip ? x : x + w };
-    }).sort((a, b) => a.left - b.left);
+      const fan = label.classList.contains('tl__label--fan');
+      // stem : position du trait vertical (aucun pour un éventail)
+      return { label, left: flip ? x - w : x, right: flip ? x : x + w, stem: fan ? null : (flip ? x - 1 : x + 1) };
+    });
 
-    // Un libellé peut imposer son étage avec data-lvl ; il est placé en premier
+    // Un libellé peut imposer son étage avec data-lvl ; il est placé en premier.
+    // Les autres sont placés de droite à gauche, sans chevauchement, et sans recouvrir
+    // le trait vertical d'un voisin : si c'était le cas, ils passent au-dessus de lui.
     const levels = [];
+    const placed = [];
     const fits = (lvl, box) => (levels[lvl] || []).every(o => box.right < o.left - 10 || box.left > o.right + 10);
+    const covers = (box, stem) => stem !== null && stem > box.left + 2 && stem < box.right + 4;
     const pinned = box => box.label.dataset.lvl !== undefined;
-    [...boxes.filter(pinned), ...boxes.filter(box => !pinned(box))].forEach(box => {
-      let lvl = pinned(box) ? Number(box.label.dataset.lvl) : 0;
-      while (!pinned(box) && !fits(lvl, box)) lvl++;
+    const free = boxes.filter(box => !pinned(box)).sort((a, b) => (b.stem ?? b.left) - (a.stem ?? a.left));
+    [...boxes.filter(pinned), ...free].forEach(box => {
+      let lvl;
+      if (pinned(box)) {
+        lvl = Number(box.label.dataset.lvl);
+      } else {
+        // au-dessus des voisins dont il recouvrirait le trait…
+        const lo = Math.max(0, ...placed.filter(o => !pinned(o) && covers(box, o.stem)).map(o => o.lvl + 1));
+        // …et si possible en dessous de ceux qui recouvriraient le sien
+        const hi = Math.min(Infinity, ...placed.filter(o => covers(o, box.stem)).map(o => o.lvl - 1));
+        lvl = lo;
+        while (lvl <= hi && !fits(lvl, box)) lvl++;
+        if (lvl > hi) {
+          lvl = lo;
+          while (!fits(lvl, box)) lvl++;
+        }
+      }
+      box.lvl = lvl;
+      placed.push(box);
       (levels[lvl] = levels[lvl] || []).push(box);
       box.label.style.setProperty('--lvl', lvl);
     });
