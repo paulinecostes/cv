@@ -138,6 +138,19 @@ main {
   }
 }
 
+/* ===== Domains grid (accueil) ===== */
+
+.domains-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 900px) {
+  .domains-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* ===== Responsibilities list ===== */
 
 .responsibilities {

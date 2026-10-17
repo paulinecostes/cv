@@ -83,7 +83,7 @@
   border-radius: 2px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .burger {
     display: block;
   }
@@ -144,7 +144,9 @@
   .burger.open .burger__line:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
+}
 
+@media (max-width: 767px) {
   /* Tables: compact on mobile */
   table th,
   table td {
@@ -213,6 +215,73 @@
   font-size: var(--text-small);
   color: var(--earth-600);
   line-height: 1.5;
+}
+
+/* ===== Domain cards (accueil) ===== */
+
+.domain-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  border-top: 4px solid var(--green-700);
+}
+
+.domain-card:hover {
+  border-color: var(--green-700);
+}
+
+.domain-card:focus-visible {
+  outline: 2px solid var(--green-700);
+  outline-offset: 2px;
+}
+
+.domain-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--green-50);
+  color: var(--green-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+
+.domain-card:hover .domain-card__icon {
+  background: var(--green-700);
+  color: var(--white);
+}
+
+.domain-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: 600;
+  color: var(--green-900);
+}
+
+.domain-card__description {
+  font-size: var(--text-small);
+  color: var(--earth-600);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.domain-card__link {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--green-700);
+}
+
+.domain-card__link span {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.domain-card:hover .domain-card__link span {
+  transform: translateX(4px);
 }
 
 /* ===== Timeline ===== */

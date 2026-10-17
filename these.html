@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=2">
-  <link rel="stylesheet" href="css/base.css?v=2">
-  <link rel="stylesheet" href="css/components.css?v=2">
-  <link rel="stylesheet" href="css/layout.css?v=2">
+  <link rel="stylesheet" href="css/variables.css?v=4">
+  <link rel="stylesheet" href="css/base.css?v=4">
+  <link rel="stylesheet" href="css/components.css?v=4">
+  <link rel="stylesheet" href="css/layout.css?v=4">
 </head>
 <body>
   <!-- Header -->
@@ -31,11 +31,11 @@
       </button>
       <div class="nav__links">
         <button class="nav__close" aria-label="Fermer le menu">&times;</button>
-        <a href="a-propos.html" class="nav__link">À propos</a>
-        <a href="index.html#parcours" class="nav__link">Parcours</a>
-        <a href="projets.html" class="nav__link">Projets</a>
-        <a href="publications.html" class="nav__link">Publications & communications</a>
-        <a href="index.html#contact" class="nav__link">Contact</a>
+        <a href="ingenierie-ecologique.html" class="nav__link">Ingénierie écologique</a>
+        <a href="recherche-enseignement.html" class="nav__link nav__link--active">Recherche &amp; enseignement</a>
+        <a href="mediation-vulgarisation.html" class="nav__link">Médiation &amp; vulgarisation</a>
+        <a href="parcours.html" class="nav__link">Parcours</a>
+        <a href="#contact" class="nav__link">Contact</a>
       </div>
     </nav>
   </header>
@@ -201,12 +201,12 @@
     <!-- Retour -->
     <section class="section section--alt" style="text-align: center;">
       <div class="container">
-        <a href="projets.html" class="btn btn-secondary">&larr; Retour aux projets</a>
+        <a href="recherche-enseignement.html" class="btn btn-secondary">&larr; Retour &agrave; Recherche &amp; enseignement</a>
       </div>
     </section>
   </main>
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer id="contact" class="site-footer" style="position: relative; overflow: hidden;">
     <div class="container">
       <div class="footer__grid">
         <div>
@@ -223,14 +223,20 @@
         <div>
           <h3 class="footer__title">Navigation</h3>
           <div class="footer__item"><a href="index.html">Accueil</a></div>
-          <div class="footer__item"><a href="a-propos.html">À propos</a></div>
-          <div class="footer__item"><a href="projets.html">Projets</a></div>
-          <div class="footer__item"><a href="publications.html">Publications & communications</a></div>
+          <div class="footer__item"><a href="ingenierie-ecologique.html">Ingénierie écologique</a></div>
+          <div class="footer__item"><a href="recherche-enseignement.html">Recherche &amp; enseignement</a></div>
+          <div class="footer__item"><a href="mediation-vulgarisation.html">Médiation &amp; vulgarisation</a></div>
+          <div class="footer__item"><a href="parcours.html">Parcours</a></div>
         </div>
       </div>
       <p class="footer__copy">&copy; 2026 Pauline Costes</p>
     </div>
+    <!-- Deco SVG -->
+    <svg class="deco deco--top-left" width="160" height="160" viewBox="0 0 160 160" aria-hidden="true" style="color: rgba(197,213,192,0.3);">
+      <path d="M10,150 Q30,100 70,80 Q110,60 150,10 Q120,50 80,70 Q40,90 10,150Z" fill="currentColor"/>
+    </svg>
   </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>
