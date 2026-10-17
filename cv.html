@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=23">
-  <link rel="stylesheet" href="css/base.css?v=23">
-  <link rel="stylesheet" href="css/components.css?v=23">
-  <link rel="stylesheet" href="css/layout.css?v=23">
+  <link rel="stylesheet" href="css/variables.css?v=24">
+  <link rel="stylesheet" href="css/base.css?v=24">
+  <link rel="stylesheet" href="css/components.css?v=24">
+  <link rel="stylesheet" href="css/layout.css?v=24">
 </head>
 <body>
 
@@ -60,11 +60,12 @@
         <div class="section__header" style="margin-bottom: var(--space-lg);">
           <h2>En un coup d'&oelig;il</h2>
         </div>
-        <ul class="tl-legend">
-          <li class="tl-legend__item tl-legend__item--pro">Exp&eacute;riences professionnelles</li>
-          <li class="tl-legend__item tl-legend__item--formation">Formation</li>
-          <li class="tl-legend__item tl-legend__item--stage">Stages</li>
+        <ul class="tl-legend" aria-label="Filtrer la frise par catégorie">
+          <li class="tl-legend__item tl-legend__item--pro"><button type="button" class="tl-legend__btn" data-filter="pro" aria-pressed="false">Exp&eacute;riences professionnelles</button></li>
+          <li class="tl-legend__item tl-legend__item--formation"><button type="button" class="tl-legend__btn" data-filter="formation" aria-pressed="false">Formation</button></li>
+          <li class="tl-legend__item tl-legend__item--stage"><button type="button" class="tl-legend__btn" data-filter="stage" aria-pressed="false">Stages</button></li>
         </ul>
+        <p class="tl-legend__hint">Cliquez sur une cat&eacute;gorie pour n'afficher qu'elle, puis &agrave; nouveau pour tout revoir.</p>
         <div class="tl" tabindex="0" role="region" aria-label="Frise chronologique">
           <ul class="tl__plot" style="--nu: 4; --nd: 3;">
           <li class="tl__ruler" aria-hidden="true">
@@ -699,6 +700,6 @@
     </svg>
   </footer>
 
-  <script src="js/main.js?v=18"></script>
+  <script src="js/main.js?v=24"></script>
 </body>
 </html>

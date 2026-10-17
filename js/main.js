@@ -104,3 +104,18 @@ if (timeline) {
     timeline.scrollLeft = year2018.offsetLeft - 16;
   }
 }
+
+// Légende cliquable : n'afficher qu'une catégorie de la frise
+const legendButtons = document.querySelectorAll('.tl-legend__btn');
+legendButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const active = btn.getAttribute('aria-pressed') === 'true';
+    legendButtons.forEach(b => b.setAttribute('aria-pressed', 'false'));
+    if (active) {
+      delete timeline.dataset.filter;
+    } else {
+      btn.setAttribute('aria-pressed', 'true');
+      timeline.dataset.filter = btn.dataset.filter;
+    }
+  });
+});
