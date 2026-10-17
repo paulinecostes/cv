@@ -1175,11 +1175,37 @@
   border-top: 4px solid var(--green-700);
 }
 
-/* Photo en bandeau dans une carte : sous le liseré vert, aux bords de la carte */
-.offer__image {
-  margin-top: calc(-1 * var(--space-lg));
-  border-radius: 0;
-  aspect-ratio: 16 / 6;
+/* Carte avec photo : photo en colonne à gauche sur ordinateur, en haut sur mobile */
+.offer--side {
+  padding: 0;
+  overflow: hidden;
+}
+
+.offer__side {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.offer__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+}
+
+@media (min-width: 1024px) {
+  .offer--side {
+    display: grid;
+    grid-template-columns: 38% 1fr;
+  }
+
+  .offer__side {
+    height: 100%;
+    aspect-ratio: auto;
+  }
 }
 
 .offer__title {
