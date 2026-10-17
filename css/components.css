@@ -1265,6 +1265,17 @@
   background: var(--gold-500);
 }
 
+/* Variante « experte » */
+.badge-expert {
+  background: var(--green-50);
+  border-color: var(--green-700);
+  color: var(--green-900);
+}
+
+.badge-expert::before {
+  background: var(--green-700);
+}
+
 /* Carte pleine largeur (cadre réglementaire) */
 .offer--wide {
   border-top-color: var(--green-900);
