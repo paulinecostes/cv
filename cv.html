@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=6">
-  <link rel="stylesheet" href="css/base.css?v=6">
-  <link rel="stylesheet" href="css/components.css?v=6">
-  <link rel="stylesheet" href="css/layout.css?v=6">
+  <link rel="stylesheet" href="css/variables.css?v=7">
+  <link rel="stylesheet" href="css/base.css?v=7">
+  <link rel="stylesheet" href="css/components.css?v=7">
+  <link rel="stylesheet" href="css/layout.css?v=7">
 </head>
 <body>
 
@@ -52,66 +52,115 @@
     </div>
 
     <!-- Frise chronologique
-         Pour modifier un élément : --s / --e = début / fin en années décimales (2019.5 = juillet 2019),
-         --lvl = étage (0 = près de l'axe, 1 = plus loin). Classes frise-bar--up / --down = au-dessus / en dessous de l'axe.
-         data-cat = catégorie (formation, stage, job, pro) utilisée par les filtres ; data-tip = texte de la bulle. -->
+         Pour modifier un élément : --s / --e = début / fin en années décimales (2019.5 = juillet 2019) ;
+         un repère sans --e est un point. tl__event--up / --down = au-dessus / en dessous de la ligne.
+         Les étages des libellés sont calculés automatiquement (js/main.js). -->
     <section class="section">
       <div class="container">
-        <div class="frise-head">
-          <div>
-            <p class="frise-eyebrow">Rep&egrave;res chronologiques</p>
-            <h2>Frise du parcours</h2>
-            <p class="frise-hint"><span aria-hidden="true">&#8644;</span> Faites glisser horizontalement pour explorer les ann&eacute;es et survolez les blocs pour plus de d&eacute;tails</p>
-          </div>
-          <div class="frise-filters" role="group" aria-label="Filtrer la frise">
-            <button type="button" class="frise-filter" data-filter="all" aria-pressed="true">Tout voir</button>
-            <button type="button" class="frise-filter frise-filter--formation" data-filter="formation" aria-pressed="false"><span class="frise-filter__swatch" aria-hidden="true"></span>Formations</button>
-            <button type="button" class="frise-filter frise-filter--stage" data-filter="stage" aria-pressed="false"><span class="frise-filter__swatch" aria-hidden="true"></span>Stages</button>
-            <button type="button" class="frise-filter frise-filter--job" data-filter="job" aria-pressed="false"><span class="frise-filter__swatch" aria-hidden="true"></span>Jobs &eacute;tudiants</button>
-            <button type="button" class="frise-filter frise-filter--pro" data-filter="pro" aria-pressed="false"><span class="frise-filter__swatch" aria-hidden="true"></span>Exp&eacute;riences pro</button>
-          </div>
+        <div class="section__header" style="margin-bottom: var(--space-lg);">
+          <h2>En un coup d'&oelig;il</h2>
         </div>
-        <div class="frise-panel" data-filter="all">
-          <div class="frise-scroll" tabindex="0" role="region" aria-label="Frise chronologique (défilement horizontal)">
-            <div class="frise-track">
-              <span class="frise-year" style="--s: 2013;">2013</span>
-              <span class="frise-year" style="--s: 2014;">2014</span>
-              <span class="frise-year" style="--s: 2015;">2015</span>
-              <span class="frise-year" style="--s: 2016;">2016</span>
-              <span class="frise-year" style="--s: 2017;">2017</span>
-              <span class="frise-year" style="--s: 2018;">2018</span>
-              <span class="frise-year" style="--s: 2019;">2019</span>
-              <span class="frise-year" style="--s: 2020;">2020</span>
-              <span class="frise-year" style="--s: 2021;">2021</span>
-              <span class="frise-year" style="--s: 2022;">2022</span>
-              <span class="frise-year" style="--s: 2023;">2023</span>
-              <span class="frise-year" style="--s: 2024;">2024</span>
-              <span class="frise-year" style="--s: 2025;">2025</span>
-              <span class="frise-year" style="--s: 2026;">2026</span>
-              <span class="frise-axis" aria-hidden="true"></span>
-              <span class="frise-box" data-cat="formation" data-tip="Classes préparatoires aux concours agro-vétérinaires · Montpellier · 2014–2017" tabindex="0" style="--s: 2014.67; --e: 2017.5;">🎓 Prépa Agro-Véto</span>
-              <span class="frise-box" data-cat="formation" data-tip="Licence Éthologie, Écologie et Évolution des Organismes · Université de Rennes · diplômée en 10/2018" tabindex="0" style="--s: 2017.67; --e: 2018.5;">🎓 L3</span>
-              <span class="frise-box" data-cat="formation" data-tip="Master Écologie et Biologie des Populations · Université de Poitiers · diplômée en 12/2021" tabindex="0" style="--s: 2019.67; --e: 2021.75;">🎓 Master 1 - 2</span>
-              <span class="frise-box frise-box--mixte" data-cat="formation pro" data-tip="Doctorat MNHN / CNRS · Éthologie morpho-fonctionnelle de la trompe des éléphants · 11/2021–12/2024" tabindex="0" style="--s: 2021.83; --e: 2024.92;">🎓 Doctorat</span>
-              <span class="frise-bar frise-bar--stage frise-bar--up" data-cat="stage" data-tip="Stage : bien-être animal en parc zoologique · Ménagerie du Jardin des Plantes · 06–07/2018" tabindex="0" style="--s: 2018.42; --e: 2018.58; --lvl: 0;"><span class="frise-pill">Bien-être</span></span>
-              <span class="frise-bar frise-bar--stage frise-bar--up" data-cat="stage" data-tip="Stage : nageoires des lamantins des Antilles · PZP &amp; MECADEV · 01–04/2019" tabindex="0" style="--s: 2019; --e: 2019.33; --lvl: 1;"><span class="frise-pill">Lamantins</span></span>
-              <span class="frise-bar frise-bar--stage frise-bar--up" data-cat="stage" data-tip="Stage terrain : reproduction des mésanges · Station de Moulis (Pyrénées) · 05–07/2019" tabindex="0" style="--s: 2019.33; --e: 2019.58; --lvl: 0;"><span class="frise-pill">Mésanges</span></span>
-              <span class="frise-bar frise-bar--stage frise-bar--up" data-cat="stage" data-tip="Stage : morpho-anatomie 3D de l&#x27;humérus chez Talpa · ISYEB · 04–06/2020" tabindex="0" style="--s: 2020.25; --e: 2020.5; --lvl: 1;"><span class="frise-pill">Talpa 3D</span></span>
-              <span class="frise-bar frise-bar--stage frise-bar--up" data-cat="stage" data-tip="Stage : trompe des éléphants de savane en Namibie · ISYEB &amp; MECADEV · 01–06/2021" tabindex="0" style="--s: 2021; --e: 2021.5; --lvl: 0;"><span class="frise-pill">🐘 Namibie</span></span>
-              <span class="frise-bar frise-bar--formation frise-bar--up" data-cat="formation" data-tip="Python, IST, intégrité scientifique, biomimétisme, HAL, projet professionnel, égalité F-H, gestion des conflits, prévention VSS, discrimination… · 2022–2024" tabindex="0" style="--s: 2022.08; --e: 2024.08; --lvl: 0;"><span class="frise-pill">Formations courtes ×11</span></span>
-              <span class="frise-bar frise-bar--formation frise-bar--up" data-cat="formation" data-tip="Training course « AI for ecologists: a toolkit » · FRB-CESAB · 2026" tabindex="0" style="--s: 2026; --e: 2026.25; --lvl: 0;"><span class="frise-pill">IA pour écologues</span></span>
-              <span class="frise-bar frise-bar--job frise-bar--down" data-cat="job" data-tip="Animatrice assistante d&#x27;équitation · Écuries de Lansargues · 2013–2015" tabindex="0" style="--s: 2013; --e: 2015.5; --lvl: 0;"><span class="frise-pill">🐴 Animatrice équitation</span></span>
-              <span class="frise-bar frise-bar--job frise-bar--down" data-cat="job" data-tip="Vendeuse en boulangerie · Histoire de Pain · 07/2015" tabindex="0" style="--s: 2015.5; --e: 2015.58; --lvl: 1;"><span class="frise-pill">Boulangerie</span></span>
-              <span class="frise-bar frise-bar--job frise-bar--down" data-cat="job" data-tip="Palefrenière soigneuse · Cheston Farm Equestrian Center, Angleterre · 08/2016" tabindex="0" style="--s: 2016.58; --e: 2016.67; --lvl: 0;"><span class="frise-pill">Palefrenière</span></span>
-              <span class="frise-bar frise-bar--job frise-bar--down" data-cat="job" data-tip="Chargée de recrutement / secrétaire · Engie Ineo · 2017 (2 mois)" tabindex="0" style="--s: 2017.42; --e: 2017.58; --lvl: 1;"><span class="frise-pill">Recrutement</span></span>
-              <span class="frise-bar frise-bar--job frise-bar--down" data-cat="job" data-tip="Guide équestre · El Rancho · 2018–2020 (4 mois cumulés)" tabindex="0" style="--s: 2018.5; --e: 2018.67; --lvl: 0;"><span class="frise-pill">Guide éq.</span></span>
-              <span class="frise-bar frise-bar--job frise-bar--down" data-cat="job" data-tip="Guide équestre · El Rancho · 2018–2020 (4 mois cumulés)" tabindex="0" style="--s: 2019.5; --e: 2019.67; --lvl: 0;"><span class="frise-pill">Guide éq.</span></span>
-              <span class="frise-bar frise-bar--job frise-bar--down" data-cat="job" data-tip="Guide équestre · El Rancho · 2018–2020 (4 mois cumulés)" tabindex="0" style="--s: 2020.5; --e: 2020.67; --lvl: 0;"><span class="frise-pill">Guide éq.</span></span>
-              <span class="frise-bar frise-bar--pro frise-bar--down" data-cat="pro" data-tip="Encadrement de stagiaire : latéralité chez les lamantins · ZooParc de Beauval · 07/2022" tabindex="0" style="--s: 2022.5; --e: 2022.58; --lvl: 1;"><span class="frise-pill">Encadrement</span></span>
-              <span class="frise-bar frise-bar--pro frise-bar--down" data-cat="pro" data-tip="Chargée de TP · UVSQ (L1, 16 h, 03/2023) &amp; Paris Nanterre (L3, 48 h, 10–12/2023)" tabindex="0" style="--s: 2023.17; --e: 2023.92; --lvl: 0;"><span class="frise-pill">Chargée de TP</span></span>
-              <span class="frise-bar frise-bar--pro frise-bar--down" data-cat="pro" data-tip="Animatrice centre de loisirs · MUC Montpellier · 2026 (3 mois)" tabindex="0" style="--s: 2026.25; --e: 2026.5; --lvl: 0;"><span class="frise-pill">Centre de loisirs</span></span>
-            </div>
-          </div>
+        <ul class="tl-legend">
+          <li class="tl-legend__item tl-legend__item--formation">Formation</li>
+          <li class="tl-legend__item tl-legend__item--pro">Exp&eacute;riences professionnelles</li>
+          <li class="tl-legend__item tl-legend__item--autres">Autres exp&eacute;riences</li>
+          <li class="tl-legend__item tl-legend__item--complementaire">Formations compl&eacute;mentaires</li>
+        </ul>
+        <div class="tl" tabindex="0" role="region" aria-label="Frise chronologique">
+          <ul class="tl__plot" style="--nu: 4; --nd: 3;">
+          <li class="tl__ruler" aria-hidden="true">
+          <span class="tl__year" style="--s: 2013;">2013</span>
+          <span class="tl__year" style="--s: 2014;">2014</span>
+          <span class="tl__year" style="--s: 2015;">2015</span>
+          <span class="tl__year" style="--s: 2016;">2016</span>
+          <span class="tl__year" style="--s: 2017;">2017</span>
+          <span class="tl__year" style="--s: 2018;">2018</span>
+          <span class="tl__year" style="--s: 2019;">2019</span>
+          <span class="tl__year" style="--s: 2020;">2020</span>
+          <span class="tl__year" style="--s: 2021;">2021</span>
+          <span class="tl__year" style="--s: 2022;">2022</span>
+          <span class="tl__year" style="--s: 2023;">2023</span>
+          <span class="tl__year" style="--s: 2024;">2024</span>
+          <span class="tl__year" style="--s: 2025;">2025</span>
+          <span class="tl__year" style="--s: 2026;">2026</span>
+          </li>
+          <li class="tl__event tl__event--up tl__event--formation" title="Classes préparatoires aux concours agro-vétérinaires, Montpellier">
+            <span class="tl__mark" style="--s: 2014.67; --e: 2017.5;"></span>
+            <span class="tl__label" style="--s: 2014.67;">Prépa Agro-Véto</span>
+          </li>
+          <li class="tl__event tl__event--up tl__event--formation" title="Licence Éthologie, Écologie et Évolution des Organismes, Université de Rennes (diplômée en 10/2018)">
+            <span class="tl__mark tl__mark--dot" style="--s: 2018.75;"></span>
+            <span class="tl__label" style="--s: 2018.75;">Licence Éthologie</span>
+          </li>
+          <li class="tl__event tl__event--up tl__event--formation" title="Master Écologie et Biologie des Populations, Université de Poitiers (diplômée en 12/2021)">
+            <span class="tl__mark tl__mark--dot" style="--s: 2021.92;"></span>
+            <span class="tl__label" style="--s: 2021.92;">Master EBP</span>
+          </li>
+          <li class="tl__event tl__event--up tl__event--pro" title="Stage de recherche : bien-être animal en parc zoologique, Ménagerie du Jardin des Plantes (06–07/2018)">
+            <span class="tl__mark" style="--s: 2018.42; --e: 2018.58;"></span>
+            <span class="tl__label" style="--s: 2018.42;">Bien-être animal</span>
+          </li>
+          <li class="tl__event tl__event--up tl__event--pro" title="Stage de recherche : nageoires des lamantins des Antilles, PZP &amp; MECADEV (01–04/2019)">
+            <span class="tl__mark" style="--s: 2019; --e: 2019.33;"></span>
+            <span class="tl__label" style="--s: 2019;">Lamantins</span>
+          </li>
+          <li class="tl__event tl__event--up tl__event--pro" title="Stage terrain &amp; recherche : reproduction des mésanges, Station de Moulis (05–07/2019)">
+            <span class="tl__mark" style="--s: 2019.33; --e: 2019.58;"></span>
+            <span class="tl__label" style="--s: 2019.33;">Mésanges</span>
+          </li>
+          <li class="tl__event tl__event--up tl__event--pro" title="Stage de recherche : morpho-anatomie 3D de l&#x27;humérus chez Talpa, ISYEB (04–06/2020)">
+            <span class="tl__mark" style="--s: 2020.25; --e: 2020.5;"></span>
+            <span class="tl__label" style="--s: 2020.25;">Taupes</span>
+          </li>
+          <li class="tl__event tl__event--up tl__event--pro" title="Stage de recherche : trompe des éléphants de savane en Namibie, ISYEB &amp; MECADEV (01–06/2021)">
+            <span class="tl__mark" style="--s: 2021; --e: 2021.5;"></span>
+            <span class="tl__label" style="--s: 2021;">Namibie</span>
+          </li>
+          <li class="tl__event tl__event--up tl__event--pro" title="Doctorante CNRS / MNHN : éthologie morpho-fonctionnelle de la trompe des éléphants (11/2021–10/2024), soutenance 12/2024">
+            <span class="tl__mark" style="--s: 2021.83; --e: 2024.92;"></span>
+            <span class="tl__label" style="--s: 2021.83;">Doctorat MNHN</span>
+          </li>
+          <li class="tl__event tl__event--up tl__event--pro" title="Encadrement de stagiaire : latéralité chez les lamantins, ZooParc de Beauval (07/2022)">
+            <span class="tl__mark" style="--s: 2022.5; --e: 2022.58;"></span>
+            <span class="tl__label" style="--s: 2022.5;">Encadrement</span>
+          </li>
+          <li class="tl__event tl__event--up tl__event--pro" title="Chargée de TP : UVSQ (L1, 16 h, 03/2023) et Paris Nanterre (L3, 48 h, 10–12/2023)">
+            <span class="tl__mark" style="--s: 2023.17; --e: 2023.25;"></span><span class="tl__mark" style="--s: 2023.75; --e: 2024;"></span>
+            <span class="tl__label" style="--s: 2023.17;">Chargée de TP</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--autres" title="Animatrice assistante d&#x27;équitation, Écuries de Lansargues (2013–2015)">
+            <span class="tl__mark" style="--s: 2013; --e: 2015.5;"></span>
+            <span class="tl__label" style="--s: 2013;">Assistante d'équitation</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--autres" title="Vendeuse en boulangerie, Histoire de Pain (07/2015)">
+            <span class="tl__mark" style="--s: 2015.5; --e: 2015.58;"></span>
+            <span class="tl__label" style="--s: 2015.5;">Boulangerie</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--autres" title="Palefrenière soigneuse, Cheston Farm Equestrian Center (08/2016)">
+            <span class="tl__mark" style="--s: 2016.58; --e: 2016.67;"></span>
+            <span class="tl__label" style="--s: 2016.58;">Palefrenière (UK)</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--autres" title="Chargée de recrutement / secrétaire, Engie Ineo (2017, 2 mois)">
+            <span class="tl__mark tl__mark--dot" style="--s: 2017.5;"></span>
+            <span class="tl__label" style="--s: 2017.5;">Engie Ineo</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--autres" title="Guide équestre, El Rancho (2018–2020, 4 mois cumulés)">
+            <span class="tl__mark tl__mark--diffus" style="--s: 2018; --e: 2021;"></span>
+            <span class="tl__label" style="--s: 2018;">Guide équestre</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--complementaire" title="Python, IST pour la thèse, intégrité scientifique, Vivre avec les autres animaux, FocusLab Biomimétisme, HAL, projet professionnel, égalité F-H, gestion des conflits, prévention VSS, discrimination (2022–2024)">
+            <span class="tl__mark tl__mark--dot" style="--s: 2022.08;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.25;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.42;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.5;"></span><span class="tl__mark" style="--s: 2022.75; --e: 2023;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.83;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.92;"></span><span class="tl__mark tl__mark--dot" style="--s: 2023.17;"></span><span class="tl__mark tl__mark--dot" style="--s: 2023.33;"></span><span class="tl__mark tl__mark--dot" style="--s: 2024.08;"></span>
+            <span class="tl__label" style="--s: 2022.08;">11 formations courtes</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--autres" title="Animatrice centre de loisirs, MUC Montpellier (2026, 3 mois)">
+            <span class="tl__mark tl__mark--dot" style="--s: 2026.4;"></span>
+            <span class="tl__label" style="--s: 2026.4;">Centre de loisirs</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--complementaire" title="Training course « AI for ecologists: a toolkit », FRB-CESAB (2026)">
+            <span class="tl__mark tl__mark--dot" style="--s: 2026.6;"></span>
+            <span class="tl__label" style="--s: 2026.6;">IA pour écologues</span>
+          </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -554,6 +603,6 @@
     </svg>
   </footer>
 
-  <script src="js/main.js?v=6"></script>
+  <script src="js/main.js?v=7"></script>
 </body>
 </html>

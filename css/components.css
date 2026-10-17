@@ -643,276 +643,177 @@
 
 /* ===== Frise chronologique (CV) ===== */
 
-.frise-head {
+.tl-legend {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-lg);
-}
-
-.frise-eyebrow {
+  justify-content: center;
+  gap: var(--space-sm) var(--space-lg);
+  margin: 0 0 var(--space-lg);
+  padding: 0;
+  list-style: none;
   font-size: var(--text-tag);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--green-700);
-  margin-bottom: var(--space-xs);
-}
-
-.frise-hint {
-  margin-top: var(--space-sm);
-  font-size: var(--text-small);
   color: var(--earth-600);
-  max-width: 520px;
 }
 
-.frise-hint span {
-  color: var(--green-700);
-  margin-right: var(--space-xs);
-}
-
-.frise-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  padding: var(--space-sm);
-  border: 1px solid var(--green-200);
-  border-radius: var(--radius-md);
-  background: var(--white);
-  max-width: 440px;
-}
-
-.frise-filter {
+.tl-legend__item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
-  border: 2px solid transparent;
-  border-radius: var(--radius-sm);
-  font: 600 var(--text-small) var(--font-body);
-  cursor: pointer;
-  background: var(--green-50);
-  color: var(--green-900);
-  transition: border-color var(--transition), opacity var(--transition);
 }
 
-.frise-filter[aria-pressed="true"] {
-  border-color: currentColor;
-}
-
-.frise-filter:focus-visible {
-  outline: 2px solid var(--green-700);
-  outline-offset: 2px;
-}
-
-.frise-filter__swatch {
+.tl-legend__item::before {
+  content: "";
   width: 10px;
   height: 10px;
   border-radius: var(--radius-full);
-  background: currentColor;
+  background: var(--c);
 }
 
-.frise-filter--formation .frise-filter__swatch { border-radius: 2px; background: var(--green-700); }
-.frise-filter--stage { background: var(--purple-50); color: var(--purple-700); }
-.frise-filter--stage .frise-filter__swatch { background: var(--purple-500); }
-.frise-filter--job,
-.frise-filter--pro { background: var(--orange-50); color: var(--orange-700); }
-.frise-filter--job .frise-filter__swatch { background: repeating-linear-gradient(-45deg, var(--orange-500) 0 2px, var(--orange-200) 2px 4px); }
-.frise-filter--pro .frise-filter__swatch { background: var(--orange-500); }
+.tl-legend__item--formation,
+.tl__event--formation { --c: var(--green-900); }
+.tl-legend__item--pro,
+.tl__event--pro { --c: var(--green-700); }
+.tl-legend__item--autres,
+.tl__event--autres { --c: var(--gold-500); }
+.tl-legend__item--complementaire,
+.tl__event--complementaire { --c: var(--earth-600); }
 
-.frise-panel {
-  border: 1px solid var(--green-200);
-  border-radius: 16px;
-  background-color: var(--white);
-  background-image: radial-gradient(var(--green-200) 1px, transparent 1px);
-  background-size: 18px 18px;
-  overflow: hidden;
-}
-
-.frise-scroll {
+.tl {
   overflow-x: auto;
-  padding: var(--space-lg) 0;
+  padding: 0 2px;
 }
 
-.frise-scroll:focus-visible {
+.tl:focus-visible {
   outline: 2px solid var(--green-700);
-  outline-offset: -2px;
+  outline-offset: 4px;
 }
 
-.frise-track {
-  --py: 84px;      /* largeur d'une année */
-  --y0: 2013;
-  --axis: 128px;   /* position verticale de l'axe */
+/* Géométrie : règle de 20px, libellés de 18px, un étage = 22px.
+   --nu / --nd = nombre d'étages au-dessus / en dessous (calculés en JS). */
+.tl__plot {
+  --y0: 2012.85;
+  --span: 14.3;
+  --axis-y: calc(var(--nu) * 22px + 24px);
   position: relative;
-  width: calc(14 * var(--py));
-  height: 250px;
-  margin: 0 48px 0 32px;
+  min-width: 900px;
+  height: calc(var(--axis-y) + var(--nd) * 22px + 22px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-/* Années */
-.frise-year {
+.tl__ruler {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--axis-y) - 10px);
+  height: 20px;
+  border: 1px solid var(--green-200);
+  border-radius: 10px;
+  background: var(--green-50);
+}
+
+.tl__year {
   position: absolute;
   top: 0;
-  left: calc((var(--s) - var(--y0)) * var(--py));
-  transform: translateX(-50%);
-  padding: 2px 8px;
-  border: 1px solid var(--green-200);
-  border-radius: 4px;
-  background: var(--green-50);
-  font-size: var(--text-tag);
+  bottom: 0;
+  left: calc((var(--s) - var(--y0)) / var(--span) * 100%);
+  width: calc(100% / var(--span));
+  border-left: 1px solid var(--green-200);
+  font-size: 0.68rem;
   font-weight: 600;
-  color: var(--green-900);
+  line-height: 18px;
+  text-align: center;
+  color: var(--green-700);
 }
 
-.frise-year::after {
-  content: "";
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 50%;
-  height: 210px;
-  border-left: 1px dashed var(--green-200);
+.tl__event {
+  display: contents;
 }
 
-/* Axe */
-.frise-axis {
+/* Repères (barres et points) collés à la règle */
+.tl__mark {
   position: absolute;
-  top: calc(var(--axis) - 1.5px);
-  left: -24px;
-  right: -36px;
-  height: 3px;
-  background: var(--green-700);
-  opacity: 0.7;
-}
-
-.frise-axis::after {
-  content: "";
-  position: absolute;
-  right: -2px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-left: 12px solid var(--green-700);
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-}
-
-/* Éléments communs */
-.frise-box,
-.frise-bar {
-  position: absolute;
-  left: calc((var(--s) - var(--y0)) * var(--py));
-  width: calc((var(--e) - var(--s)) * var(--py));
-  min-width: 12px;
+  left: calc((var(--s) - var(--y0)) / var(--span) * 100%);
+  width: calc((var(--e) - var(--s)) / var(--span) * 100%);
+  min-width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--c);
   z-index: 1;
-  cursor: default;
-  transition: opacity var(--transition), transform var(--transition);
 }
 
-.frise-box:focus-visible,
-.frise-bar:focus-visible {
-  outline: 2px solid var(--green-900);
-  outline-offset: 2px;
+.tl__event--up .tl__mark { top: calc(var(--axis-y) - 16px); }
+.tl__event--down .tl__mark { top: calc(var(--axis-y) + 10px); }
+
+.tl__mark--dot {
+  width: 10px;
+  min-width: 0;
+  height: 10px;
+  margin-left: -5px;
+  border: 2px solid var(--white);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 0 1px var(--c);
 }
 
-/* Formations : blocs sur l'axe */
-.frise-box {
-  top: calc(var(--axis) - 16px);
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  white-space: nowrap;
-  border: 2px solid var(--green-700);
-  border-radius: var(--radius-sm);
-  background: var(--green-50);
-  font-size: var(--text-small);
-  font-weight: 600;
-  color: var(--green-900);
+.tl__event--up .tl__mark--dot { top: calc(var(--axis-y) - 20px); }
+
+.tl__mark--diffus {
+  background: repeating-linear-gradient(-45deg, var(--c) 0 3px, transparent 3px 6px);
+  box-shadow: inset 0 0 0 1px var(--c);
 }
 
-.frise-box--mixte {
-  background: linear-gradient(to bottom, var(--green-50) 50%, var(--orange-100) 50%);
-  box-shadow: inset 0 -3px 0 var(--orange-500);
-}
-
-.frise-box:hover,
-.frise-bar:hover {
-  transform: translateY(-1px);
-}
-
-/* Barres au-dessus / en dessous de l'axe */
-.frise-bar {
-  height: 7px;
-  border-radius: 4px;
-}
-
-.frise-bar--up { top: calc(var(--axis) - 30px - var(--lvl) * 46px); }
-.frise-bar--down { top: calc(var(--axis) + 24px + var(--lvl) * 46px); }
-
-.frise-bar--stage { background: var(--purple-500); }
-.frise-bar--formation { background: var(--green-700); }
-.frise-bar--pro { background: var(--orange-500); }
-.frise-bar--job { background: repeating-linear-gradient(-45deg, var(--orange-500) 0 4px, var(--orange-200) 4px 8px); }
-
-.frise-pill {
+/* Libellés reliés à leur repère par un trait */
+.tl__label {
+  --lvl: 0;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 2px 8px;
-  border: 1px solid var(--green-200);
-  border-radius: var(--radius-pill);
+  left: calc((var(--s) - var(--y0)) / var(--span) * 100%);
+  z-index: calc(20 - var(--lvl)); /* les traits des étages supérieurs passent derrière */
+  height: 18px;
+  padding: 0 4px 0 7px;
   background: var(--white);
   white-space: nowrap;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--earth-800);
+  cursor: default;
+}
+
+.tl__label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: calc(10px + var(--lvl) * 22px);
+  border-left: 1px solid var(--c);
+  opacity: 0.55;
+}
+
+.tl__event--up .tl__label {
+  top: calc(var(--axis-y) - 38px - var(--lvl) * 22px);
+}
+
+.tl__event--up .tl__label::before { top: 100%; }
+
+.tl__event--down .tl__label {
+  top: calc(var(--axis-y) + 20px + var(--lvl) * 22px);
+}
+
+.tl__event--down .tl__label::before { bottom: 100%; }
+
+/* Libellé basculé à gauche de son repère (fin de frise) */
+.tl__label--flip {
+  transform: translateX(-100%);
+  padding: 0 7px 0 4px;
+  text-align: right;
+}
+
+.tl__label--flip::before {
+  left: auto;
+  right: 0;
+}
+
+.tl__label:hover {
+  color: var(--c);
   font-weight: 600;
-  color: var(--green-900);
-  box-shadow: var(--shadow-sm);
-}
-
-.frise-bar--up .frise-pill { bottom: calc(100% + 5px); }
-.frise-bar--down .frise-pill { top: calc(100% + 5px); }
-
-.frise-bar--stage .frise-pill { border-color: var(--purple-200); color: var(--purple-700); }
-.frise-bar--job .frise-pill,
-.frise-bar--pro .frise-pill { border-color: var(--orange-200); color: var(--orange-700); }
-
-/* Filtres */
-.frise-panel:not([data-filter="all"]) [data-cat] { opacity: 0.12; }
-.frise-panel[data-filter="formation"] [data-cat~="formation"],
-.frise-panel[data-filter="stage"] [data-cat~="stage"],
-.frise-panel[data-filter="job"] [data-cat~="job"],
-.frise-panel[data-filter="pro"] [data-cat~="pro"] { opacity: 1; }
-
-/* Bulle de détail */
-.frise-tip {
-  position: fixed;
-  z-index: 200;
-  max-width: 280px;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-sm);
-  background: var(--green-900);
-  color: var(--white);
-  font-size: var(--text-tag);
-  line-height: 1.45;
-  box-shadow: var(--shadow-md);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-}
-
-.frise-tip.visible {
-  opacity: 1;
-}
-
-@media (max-width: 767px) {
-  .frise-filters {
-    max-width: none;
-  }
-
-  .frise-filter {
-    padding: 4px 10px;
-    font-size: var(--text-tag);
-  }
 }
