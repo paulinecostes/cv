@@ -675,9 +675,7 @@
 .tl__event--stage { --c: var(--leaf-500); }
 .tl-legend__item--pro,
 .tl__event--pro { --c: var(--orange-500); }
-.tl__event--complementaire { --c: var(--blue-600); }
-/* Sur la ligne principale, les formations courtes sont de la formation ; seul l'encart garde le bleu */
-.tl__plot:not(.tl__plot--zoom) .tl__event--complementaire { --c: var(--green-900); }
+.tl__event--complementaire { --c: var(--green-900); } /* formations courtes = formation */
 
 .tl {
   overflow-x: auto;
@@ -877,7 +875,7 @@
   position: absolute;
   top: 100%;
   height: calc(var(--nd) * 22px + 30px);
-  border-left: 1px dashed var(--blue-600);
+  border-left: 1px dashed var(--green-700);
   opacity: 0.6;
 }
 
@@ -898,7 +896,7 @@
 
 .tl__link path {
   fill: none;
-  stroke: var(--blue-600);
+  stroke: var(--green-700);
   stroke-width: 1.5;
   vector-effect: non-scaling-stroke;
 }
@@ -906,9 +904,9 @@
 .tl__zoom {
   min-width: 900px;
   padding: 6px 18px 4px;
-  border: 1px solid var(--blue-100);
+  border: 1px solid var(--green-200);
   border-radius: 14px;
-  background: var(--blue-50);
+  background: var(--green-50);
 }
 
 .tl__zoom-title {
@@ -917,7 +915,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--blue-600);
+  color: var(--green-700);
 }
 
 .tl__zoom .tl__plot {
@@ -925,19 +923,19 @@
 }
 
 .tl__zoom .tl__label {
-  background: var(--blue-50);
+  background: var(--green-50);
 }
 
 .tl__plot--zoom {
-  --c: var(--blue-600);
+  --c: var(--green-900);
 }
 
 .tl__plot--zoom .tl__ruler {
-  border-color: var(--blue-100);
+  border-color: var(--green-200);
   background: var(--white);
 }
 
 .tl__plot--zoom .tl__year {
-  border-left-color: var(--blue-100);
-  color: var(--blue-600);
+  border-left-color: var(--green-200);
+  color: var(--green-700);
 }
