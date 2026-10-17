@@ -861,16 +861,13 @@
   text-underline-offset: 2px;
 }
 
-/* Loupe sur les formations complémentaires */
+/* Loupe sur les formations courtes : repères sous la période, crochet, encart */
 .tl__focus {
   position: absolute;
-  top: -1px;
-  bottom: -1px;
+  top: 0;
+  bottom: 0;
   left: calc((var(--s) - var(--y0)) / var(--span) * 100%);
   width: calc((var(--e) - var(--s)) / var(--span) * 100%);
-  border: 1px solid var(--blue-600);
-  border-radius: 10px;
-  background: rgba(58, 122, 140, 0.14);
 }
 
 .tl__focus::before,
@@ -878,17 +875,17 @@
   content: "";
   position: absolute;
   top: 100%;
-  height: calc(var(--nd) * 22px + 22px);
+  height: calc(var(--nd) * 22px + 30px);
   border-left: 1px dashed var(--blue-600);
   opacity: 0.6;
 }
 
-.tl__focus::before { left: -1px; }
-.tl__focus::after { right: -1px; }
+.tl__focus::before { left: 0; }
+.tl__focus::after { right: 0; }
 
 .tl__link {
   min-width: 900px;
-  height: 36px;
+  height: 30px;
 }
 
 .tl__link svg {
@@ -898,16 +895,36 @@
   overflow: visible;
 }
 
-.tl__link polygon {
-  fill: rgba(58, 122, 140, 0.07);
+.tl__link path {
+  fill: none;
+  stroke: var(--blue-600);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
 }
 
-.tl__link line {
-  stroke: var(--blue-600);
-  stroke-width: 1;
-  stroke-dasharray: 4 3;
-  opacity: 0.6;
-  vector-effect: non-scaling-stroke;
+.tl__zoom {
+  min-width: 900px;
+  padding: 6px 18px 4px;
+  border: 1px solid var(--blue-100);
+  border-radius: 14px;
+  background: var(--blue-50);
+}
+
+.tl__zoom-title {
+  margin: 0 0 2px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+}
+
+.tl__zoom .tl__plot {
+  min-width: 0;
+}
+
+.tl__zoom .tl__label {
+  background: var(--blue-50);
 }
 
 .tl__plot--zoom {
@@ -916,8 +933,7 @@
 
 .tl__plot--zoom .tl__ruler {
   border-color: var(--blue-100);
-  background: var(--blue-50);
-  box-shadow: 0 0 0 1px rgba(58, 122, 140, 0.25);
+  background: var(--white);
 }
 
 .tl__plot--zoom .tl__year {
