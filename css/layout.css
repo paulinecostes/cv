@@ -251,15 +251,9 @@ main {
   box-shadow: var(--shadow-sm);
 }
 
-.gallery__item figcaption {
-  margin-top: var(--space-sm);
-  font-size: var(--text-small);
-  color: var(--earth-600);
-}
-
 @media (min-width: 768px) {
   .gallery {
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
   }
 
   .gallery__item img {
