@@ -794,6 +794,12 @@
   background: linear-gradient(to bottom, var(--green-900) 50%, var(--orange-500) 50%);
 }
 
+/* En cours : la barre s'estompe vers la droite */
+.tl__mark--ongoing {
+  background: linear-gradient(90deg, var(--c) 55%, transparent);
+  box-shadow: none;
+}
+
 /* Temps partiel : barre hachurée */
 .tl__mark--partiel {
   background: repeating-linear-gradient(-45deg, var(--c) 0 3px, transparent 3px 6px);
