@@ -790,10 +790,6 @@
   background: linear-gradient(to bottom, var(--green-900), var(--orange-500));
 }
 
-.tl-legend__item--both::before {
-  background: linear-gradient(to bottom, var(--green-900) 50%, var(--orange-500) 50%);
-}
-
 /* En cours : la barre s'estompe vers la droite */
 .tl__mark--ongoing {
   background: linear-gradient(90deg, var(--c) 55%, transparent);
