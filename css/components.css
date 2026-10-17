@@ -780,6 +780,12 @@
   pointer-events: none;
 }
 
+/* Temps partiel : barre hachurée */
+.tl__mark--partiel {
+  background: repeating-linear-gradient(-45deg, var(--c) 0 3px, transparent 3px 6px);
+  box-shadow: inset 0 0 0 1px var(--c), 0 0 0 1.5px var(--white);
+}
+
 /* Libellés reliés à leur repère par un trait */
 .tl__label {
   --lvl: 0;
