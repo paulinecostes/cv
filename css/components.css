@@ -718,8 +718,10 @@
 .tl[data-filter="pro"] .tl__event:not(.tl__event--pro, .tl__event--both) > *,
 .tl[data-filter="formation"] .tl__event:not(.tl__event--formation, .tl__event--complementaire, .tl__event--both) > *,
 .tl[data-filter="stage"] .tl__event:not(.tl__event--stage) > *,
+.tl[data-filter="asso"] .tl__event:not(.tl__event--asso) > *,
 .tl[data-filter="pro"] :is(.tl__focus, .tl__link, .tl__zoom),
-.tl[data-filter="stage"] :is(.tl__focus, .tl__link, .tl__zoom) {
+.tl[data-filter="stage"] :is(.tl__focus, .tl__link, .tl__zoom),
+.tl[data-filter="asso"] :is(.tl__focus, .tl__link, .tl__zoom) {
   opacity: 0;
   visibility: hidden;
 }
@@ -728,6 +730,8 @@
 .tl__event--formation { --c: var(--green-900); }
 .tl-legend__item--stage,
 .tl__event--stage { --c: var(--leaf-500); }
+.tl-legend__item--asso,
+.tl__event--asso { --c: var(--plum-600); }
 .tl-legend__item--pro,
 .tl__event--pro { --c: var(--orange-500); }
 .tl__event--complementaire { --c: var(--green-900); } /* formations courtes = formation */
@@ -822,6 +826,9 @@
 
 /* La formation a sa propre piste, parallèle à celle des expériences */
 .tl__event--formation .tl__mark { top: calc(var(--axis-y) - 25px); }
+
+/* Les engagements associatifs ont leur propre piste, sous celle des expériences */
+.tl__event--down.tl__event--asso .tl__mark { top: calc(var(--axis-y) + 19px); }
 
 /* Les formations complémentaires ont leur propre piste, sous celle des expériences */
 .tl__event--down.tl__event--complementaire .tl__mark { top: calc(var(--axis-y) + 19px); }

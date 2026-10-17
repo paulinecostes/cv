@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=31">
-  <link rel="stylesheet" href="css/base.css?v=31">
-  <link rel="stylesheet" href="css/components.css?v=31">
-  <link rel="stylesheet" href="css/layout.css?v=31">
+  <link rel="stylesheet" href="css/variables.css?v=32">
+  <link rel="stylesheet" href="css/base.css?v=32">
+  <link rel="stylesheet" href="css/components.css?v=32">
+  <link rel="stylesheet" href="css/layout.css?v=32">
 </head>
 <body>
 
@@ -64,6 +64,7 @@
           <h2>Mon parcours en un coup d'&oelig;il</h2>
         </div>
         <ul class="tl-legend" aria-label="Filtrer la frise par catégorie">
+          <li class="tl-legend__item tl-legend__item--asso"><button type="button" class="tl-legend__btn" data-filter="asso" aria-pressed="false">Engagements associatifs</button></li>
           <li class="tl-legend__item tl-legend__item--pro"><button type="button" class="tl-legend__btn" data-filter="pro" aria-pressed="false">Exp&eacute;riences professionnelles</button></li>
           <li class="tl-legend__item tl-legend__item--formation"><button type="button" class="tl-legend__btn" data-filter="formation" aria-pressed="false">Formation</button></li>
           <li class="tl-legend__item tl-legend__item--stage"><button type="button" class="tl-legend__btn" data-filter="stage" aria-pressed="false">Stages</button></li>
@@ -163,6 +164,27 @@
           <li class="tl__event tl__event--down tl__event--pro" data-kind="Expérience pro" data-title="Animatrice périscolaire" data-place="IFAC Occitanie" data-date="depuis le 15/09/2026 · en cours">
             <span class="tl__mark tl__mark--ongoing" style="--s: 2026.71; --e: 2026.95;"></span>
             <span class="tl__label" data-lvl="1" style="--s: 2026.71;">Animatrice</span>
+          </li>
+          <!-- Engagements associatifs (sous la règle, piste extérieure) -->
+          <li class="tl__event tl__event--down tl__event--asso" data-kind="Engagement associatif" data-title="Le Chêne" data-place="Bénévolat à temps plein" data-date="19/06 – 02/07/2017">
+            <span class="tl__mark" style="--s: 2017.46; --e: 2017.5;"></span>
+            <span class="tl__label" style="--s: 2017.46;">Le Chêne</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--asso" data-kind="Engagement associatif" data-title="Cercle naturaliste des étudiants nantais" data-place="Pendant la L3 Écologie" data-date="09/2017 – 06/2018">
+            <span class="tl__mark" style="--s: 2017.67; --e: 2018.5;"></span>
+            <span class="tl__label" style="--s: 2017.67;">CNER</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--asso" data-kind="Engagement associatif" data-title="BEBOP (Bureau des Étudiants en Biologie des Organismes de Poitiers) &amp; Vienne Nature" data-place="Pendant le master" data-date="09/2019 – 06/2021">
+            <span class="tl__mark" style="--s: 2019.67; --e: 2021.5;"></span>
+            <span class="tl__label" style="--s: 2019.67;">BEBOP &amp; Vienne Nature</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--asso" data-kind="Engagement associatif" data-title="Projet CROA" data-place="" data-date="2026">
+            <span class="tl__mark" style="--s: 2026; --e: 2026.79;"></span>
+            <span class="tl__label" style="--s: 2026;">Projet CROA</span>
+          </li>
+          <li class="tl__event tl__event--down tl__event--asso" data-kind="Engagement associatif" data-title="LPO et Groupe jeune LPO Hérault" data-place="" data-date="depuis 10/2026 · en cours">
+            <span class="tl__mark tl__mark--ongoing" style="--s: 2026.75; --e: 2026.95;"></span>
+            <span class="tl__label" style="--s: 2026.75;">LPO Hérault</span>
           </li>
           <li class="tl__event tl__event--up tl__event--complementaire" data-kind="Formation courte" data-title="AI for ecologists: a toolkit" data-place="FRB-CESAB" data-date="06/2026">
             <span class="tl__mark tl__mark--dot" style="--s: 2026.46;"></span>
