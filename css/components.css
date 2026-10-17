@@ -421,6 +421,32 @@
   font-weight: 500;
 }
 
+/* Tag cliquable (lien vers une carte de la page) */
+.tag--link {
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.tag--link::after {
+  content: " \2193";
+}
+
+.tag--link:hover,
+.tag--link:focus-visible {
+  background: var(--green-700);
+  border-color: var(--green-700);
+  color: var(--white);
+}
+
+/* Carte ciblée par un lien d'ancre */
+[id^="terrain-"] {
+  scroll-margin-top: 96px;
+}
+
+[id^="terrain-"]:target {
+  box-shadow: 0 0 0 3px var(--gold-500);
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;

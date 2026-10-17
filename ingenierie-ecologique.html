@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=43">
-  <link rel="stylesheet" href="css/base.css?v=43">
-  <link rel="stylesheet" href="css/components.css?v=43">
-  <link rel="stylesheet" href="css/layout.css?v=43">
+  <link rel="stylesheet" href="css/variables.css?v=44">
+  <link rel="stylesheet" href="css/base.css?v=44">
+  <link rel="stylesheet" href="css/components.css?v=44">
+  <link rel="stylesheet" href="css/layout.css?v=44">
 </head>
 <body>
 
@@ -119,6 +119,13 @@
               <h3 class="offer__title">Terrain &amp; expertise naturaliste</h3>
               <span class="badge-learning">En cours d&rsquo;apprentissage</span>
               <p class="card__description">Inventaires et suivis d&rsquo;esp&egrave;ces (avifaune, amphibiens), observations comportementales, conception et d&eacute;ploiement de protocoles. Titulaire du permis B et v&eacute;hicul&eacute;e, je suis disponible pour les visites de terrain, prospections et suivis de chantier sur toute l&rsquo;Occitanie.</p>
+              <nav class="tags" aria-label="Exp&eacute;riences de terrain">
+                <a class="tag tag--link" href="#terrain-croa">Amphibiens urbains (CROA)</a>
+                <a class="tag tag--link" href="#terrain-cambodge">&Eacute;l&eacute;phants au Cambodge</a>
+                <a class="tag tag--link" href="#terrain-beauval">Protocoles &agrave; Beauval</a>
+                <a class="tag tag--link" href="#terrain-mesanges">M&eacute;sanges des Pyr&eacute;n&eacute;es</a>
+                <a class="tag tag--link" href="#terrain-associatif">Engagement associatif</a>
+              </nav>
             </div>
           </div>
           <div class="card offer">
@@ -228,7 +235,7 @@
         <h2 style="margin-bottom: var(--space-lg);">Exp&eacute;riences de terrain</h2>
         <div class="cards-grid">
           <!-- Projet CROA -->
-          <div class="card">
+          <div class="card" id="terrain-croa">
             <h3 class="card__title">Inventaires d&rsquo;amphibiens en milieu urbain</h3>
             <p class="card__meta">Projet CROA, CEFE-CNRS / Universit&eacute; de Montpellier &middot; 04 &ndash; 06/2026</p>
             <p class="card__description">Inventaires d&rsquo;amphibiens en milieu urbain et p&eacute;ri-urbain montpelli&eacute;rain, dans le cadre d&rsquo;un programme de recherche participative visant &agrave; &eacute;tudier et pr&eacute;server ces populations.</p>
@@ -242,7 +249,7 @@
             </div>
           </div>
           <!-- Cambodge -->
-          <div class="card">
+          <div class="card" id="terrain-cambodge">
             <div class="card__image">
               <img src="terrain-riviere.jpg" alt="Pauline Costes traversant une rivière sur un pont de rondins en forêt tropicale" width="900" height="1200" loading="lazy" style="object-position: center 30%;">
             </div>
@@ -259,7 +266,7 @@
             </div>
           </div>
           <!-- Beauval -->
-          <div class="card">
+          <div class="card" id="terrain-beauval">
             <div class="card__image">
               <img src="protocole-beauval.jpg" alt="Pauline Costes installant un dispositif expérimental équipé de caméras dans l'enclos des éléphants" width="1400" height="788" loading="lazy" style="object-position: 38% 45%;">
             </div>
@@ -276,7 +283,7 @@
             </div>
           </div>
           <!-- Stage mesanges -->
-          <div class="card">
+          <div class="card" id="terrain-mesanges">
             <button class="accordion__trigger" aria-expanded="true">
               <div style="display: flex; justify-content: space-between; align-items: start;">
                 <div>
@@ -308,7 +315,7 @@
             </div>
           </div>
           <!-- Engagement associatif -->
-          <div class="card">
+          <div class="card" id="terrain-associatif">
             <h3 class="card__title">Engagement associatif : naturalisme &amp; conservation</h3>
             <p class="card__meta">Le Ch&ecirc;ne, CNER, BEBOP, Vienne Nature, Projet CROA, LPO H&eacute;rault &middot; 2017 &ndash; aujourd&rsquo;hui</p>
             <p class="card__description">
