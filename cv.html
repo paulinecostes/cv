@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=24">
-  <link rel="stylesheet" href="css/base.css?v=24">
-  <link rel="stylesheet" href="css/components.css?v=24">
-  <link rel="stylesheet" href="css/layout.css?v=24">
+  <link rel="stylesheet" href="css/variables.css?v=26">
+  <link rel="stylesheet" href="css/base.css?v=26">
+  <link rel="stylesheet" href="css/components.css?v=26">
+  <link rel="stylesheet" href="css/layout.css?v=26">
 </head>
 <body>
 
@@ -54,7 +54,8 @@
     <!-- Frise chronologique
          Pour modifier un élément : --s / --e = début / fin en années décimales (2019.5 = juillet 2019) ;
          un repère sans --e est un point. tl__event--up / --down = au-dessus / en dessous de la ligne.
-         Les étages des libellés sont calculés automatiquement (js/main.js) ; data-lvl="0" sur un libellé impose son étage. -->
+         Les étages des libellés sont calculés automatiquement (js/main.js) ; data-lvl="0" sur un libellé impose son étage.
+         Bulle de détail : data-kind (type), data-title (intitulé), data-place (lieu), data-date (dates). -->
     <section class="section">
       <div class="container">
         <div class="section__header" style="margin-bottom: var(--space-lg);">
@@ -85,87 +86,87 @@
           <span class="tl__year" style="--s: 2025;">2025</span>
           <span class="tl__year" style="--s: 2026;">2026</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--formation" title="Classes préparatoires aux concours agro-vétérinaires, Montpellier">
+          <li class="tl__event tl__event--up tl__event--formation" data-kind="Formation" data-title="Classes préparatoires aux concours agro-vétérinaires" data-place="Montpellier" data-date="2014 – 2017">
             <span class="tl__mark" style="--s: 2014.67; --e: 2017.5;"></span>
             <span class="tl__label" data-lvl="0" style="--s: 2014.67;">Licence 1 - 3 Prépa Agro-Véto</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--formation" title="Licence Éthologie, Écologie et Évolution des Organismes, Université de Rennes (09/2017–06/2018)">
+          <li class="tl__event tl__event--up tl__event--formation" data-kind="Formation" data-title="Licence Éthologie, Écologie et Évolution des Organismes" data-place="Université de Rennes" data-date="09/2017 – 06/2018">
             <span class="tl__mark" style="--s: 2017.67; --e: 2018.5;"></span>
             <span class="tl__label" data-lvl="0" style="--s: 2017.67;">L3 Écologie</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--formation" title="Master Écologie et Biologie des Populations, Université de Poitiers (09/2019–06/2021)">
+          <li class="tl__event tl__event--up tl__event--formation" data-kind="Formation" data-title="Master Écologie et Biologie des Populations" data-place="Université de Poitiers" data-date="09/2019 – 06/2021">
             <span class="tl__mark" style="--s: 2019.67; --e: 2021.5;"></span>
             <span class="tl__label" data-lvl="0" style="--s: 2019.67;">M1-2 Écologie</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--stage" title="Stage de recherche : bien-être animal en parc zoologique, Ménagerie du Jardin des Plantes (06–07/2018)">
+          <li class="tl__event tl__event--up tl__event--stage" data-kind="Stage de recherche" data-title="Bien-être animal en parc zoologique" data-place="Ménagerie du Jardin des Plantes, MNHN" data-date="06 – 07/2018">
             <span class="tl__mark" style="--s: 2018.42; --e: 2018.58;"></span>
             <span class="tl__label" style="--s: 2018.42;">Bien-être animal</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--stage" title="Stage de recherche : nageoires des lamantins des Antilles, PZP &amp; MECADEV (01–04/2019)">
+          <li class="tl__event tl__event--up tl__event--stage" data-kind="Stage de recherche" data-title="Nageoires des lamantins des Antilles" data-place="PZP &amp; MECADEV, CNRS / MNHN" data-date="01 – 04/2019">
             <span class="tl__mark" style="--s: 2019; --e: 2019.33;"></span>
             <span class="tl__label" style="--s: 2019;">Lamantins</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--stage" title="Stage terrain &amp; recherche : reproduction des mésanges, Station de Moulis (05–07/2019)">
+          <li class="tl__event tl__event--up tl__event--stage" data-kind="Stage terrain &amp; recherche" data-title="Reproduction des mésanges dans les Pyrénées" data-place="Station de Moulis, CNRS" data-date="05 – 07/2019">
             <span class="tl__mark" style="--s: 2019.33; --e: 2019.58;"></span>
             <span class="tl__label" style="--s: 2019.33;">Mésanges</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--stage" title="Stage de recherche : morpho-anatomie 3D de l&#x27;humérus chez Talpa, ISYEB (04–06/2020)">
+          <li class="tl__event tl__event--up tl__event--stage" data-kind="Stage de recherche" data-title="Morpho-anatomie 3D de l&#x27;humérus chez Talpa" data-place="ISYEB, CNRS / MNHN" data-date="04 – 06/2020">
             <span class="tl__mark" style="--s: 2020.25; --e: 2020.5;"></span>
             <span class="tl__label" style="--s: 2020.25;">Taupes</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--stage" title="Stage de recherche : trompe des éléphants de savane en Namibie, ISYEB &amp; MECADEV (01–06/2021)">
+          <li class="tl__event tl__event--up tl__event--stage" data-kind="Stage de recherche" data-title="Trompe des éléphants de savane en Namibie" data-place="ISYEB &amp; MECADEV, CNRS / MNHN" data-date="01 – 06/2021">
             <span class="tl__mark" style="--s: 2021; --e: 2021.5;"></span>
             <span class="tl__label" style="--s: 2021;">Namibie</span>
           </li>
           <!-- Le doctorat est à la fois une formation et une expérience pro : ruban bicolore -->
-          <li class="tl__event tl__event--up tl__event--both" title="Doctorat MNHN / CNRS (11/2021–12/2024) : formation doctorale et expérience professionnelle de doctorante — éthologie morpho-fonctionnelle de la trompe des éléphants">
+          <li class="tl__event tl__event--up tl__event--both" data-kind="Formation &amp; expérience pro" data-title="Doctorat : éthologie morpho-fonctionnelle de la trompe des éléphants" data-place="MNHN / CNRS, Paris" data-date="11/2021 – 12/2024">
             <span class="tl__mark" style="--s: 2021.83; --e: 2024.92;"></span>
             <span class="tl__label" data-lvl="0" style="--s: 2021.83;"><span class="tl__gradient-text">Doctorat MNHN</span></span>
           </li>
-          <li class="tl__event tl__event--down tl__event--pro" title="Chargée de TP : UVSQ (L1, 16 h, 03/2023) et Paris Nanterre (L3, 48 h, 10–12/2023)">
+          <li class="tl__event tl__event--down tl__event--pro" data-kind="Enseignement" data-title="Chargée de TP en L1 et L3" data-place="UVSQ (16 h) &amp; Paris Nanterre (48 h)" data-date="03/2023 · 10 – 12/2023">
             <span class="tl__mark" style="--s: 2023.17; --e: 2023.25;"></span><span class="tl__mark" style="--s: 2023.75; --e: 2024;"></span>
             <span class="tl__label" style="--s: 2023.17;">Chargée de TP</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--pro" title="Animatrice assistante d&#x27;équitation, Écuries de Lansargues (09/2013–2015, une demi-journée par semaine)">
+          <li class="tl__event tl__event--down tl__event--pro" data-kind="Expérience pro" data-title="Animatrice assistante d&#x27;équitation" data-place="Écuries de Lansargues · une demi-journée par semaine" data-date="09/2013 – 2015">
             <span class="tl__mark tl__mark--partiel" style="--s: 2013.67; --e: 2015.5;"></span>
             <span class="tl__label" style="--s: 2013.67;">Animatrice</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--pro" title="Vendeuse en boulangerie, Histoire de Pain (07/2015)">
+          <li class="tl__event tl__event--down tl__event--pro" data-kind="Expérience pro" data-title="Vendeuse en boulangerie" data-place="Histoire de Pain" data-date="07/2015">
             <span class="tl__mark" style="--s: 2015.5; --e: 2015.58;"></span>
             <span class="tl__label" style="--s: 2015.5;">Boulangerie</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--pro" title="Palefrenière soigneuse, Cheston Farm Equestrian Center (08/2016)">
+          <li class="tl__event tl__event--down tl__event--pro" data-kind="Expérience pro" data-title="Palefrenière soigneuse" data-place="Cheston Farm Equestrian Center, Angleterre" data-date="08/2016">
             <span class="tl__mark" style="--s: 2016.58; --e: 2016.67;"></span>
             <span class="tl__label" style="--s: 2016.58;">Palefrenière (UK)</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--pro" title="Chargée de recrutement / secrétaire, Engie Ineo (2017, 2 mois)">
+          <li class="tl__event tl__event--down tl__event--pro" data-kind="Expérience pro" data-title="Chargée de recrutement / secrétaire" data-place="Engie Ineo" data-date="2017 · 2 mois">
             <span class="tl__mark tl__mark--dot" style="--s: 2017.5;"></span>
             <span class="tl__label" style="--s: 2017.5;">Engie Ineo</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--pro" title="Guide équestre, El Rancho : août 2018, août 2019, juillet–août 2020, août 2021 (5 mois cumulés)">
+          <li class="tl__event tl__event--down tl__event--pro" data-kind="Expérience pro" data-title="Guide équestre" data-place="El Rancho · 5 mois cumulés" data-date="08/2018 · 08/2019 · 07–08/2020 · 08/2021">
             <span class="tl__mark tl__mark--dot" style="--s: 2018.62;"></span><span class="tl__mark tl__mark--dot" style="--s: 2019.62;"></span><span class="tl__mark" style="--s: 2020.5; --e: 2020.67;"></span><span class="tl__mark tl__mark--dot" style="--s: 2021.62;"></span>
             <span class="tl__label" style="--s: 2018.62;">Guide équestre</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--complementaire" title="Python, IST pour la thèse, intégrité scientifique, Vivre avec les autres animaux, FocusLab Biomimétisme, HAL, projet professionnel, égalité F-H, gestion des conflits, prévention VSS, discrimination (2022–2024)">
+          <li class="tl__event tl__event--down tl__event--complementaire" data-kind="Formations courtes" data-title="11 formations courtes" data-place="Détail dans l’encart ci-dessous" data-date="2022 – 2024">
             <span class="tl__mark tl__mark--dot" style="--s: 2022.08;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.25;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.42;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.5;"></span><span class="tl__mark" style="--s: 2022.75; --e: 2023;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.83;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.92;"></span><span class="tl__mark tl__mark--dot" style="--s: 2023.17;"></span><span class="tl__mark tl__mark--dot" style="--s: 2023.33;"></span><span class="tl__mark tl__mark--dot" style="--s: 2024.08;"></span>
           </li>
-          <li class="tl__event tl__event--down tl__event--pro" title="Montage de projets et candidatures à des financements postdoctoraux : Fondation Fyssen, MSCA (Marie Skłodowska-Curie), Fondation Humboldt, Newton International Fellowship (2025)">
+          <li class="tl__event tl__event--down tl__event--pro" data-kind="Recherche de financements" data-title="Montage de projets postdoctoraux" data-place="Fondation Fyssen · MSCA · Fondation Humboldt · Newton International Fellowship" data-date="2025">
             <span class="tl__mark" style="--s: 2025; --e: 2026;"></span>
             <span class="tl__label" style="--s: 2025;">Candidatures postdoc</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--pro" title="Animatrice extrascolaire, MUC Montpellier (2026, 3 mois)">
+          <li class="tl__event tl__event--down tl__event--pro" data-kind="Expérience pro" data-title="Animatrice extrascolaire" data-place="MUC Montpellier · 3 mois" data-date="2026">
             <span class="tl__mark tl__mark--dot" style="--s: 2026.4;"></span>
             <span class="tl__label" style="--s: 2026.4;">Animatrice</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--pro" title="Animatrice périscolaire, IFAC Occitanie (depuis le 15/09/2026, en cours)">
+          <li class="tl__event tl__event--down tl__event--pro" data-kind="Expérience pro" data-title="Animatrice périscolaire" data-place="IFAC Occitanie" data-date="depuis le 15/09/2026 · en cours">
             <span class="tl__mark tl__mark--ongoing" style="--s: 2026.71; --e: 2026.95;"></span>
             <span class="tl__label" style="--s: 2026.71;">Animatrice</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--complementaire" title="Training course « AI for ecologists: a toolkit », FRB-CESAB (2026)">
+          <li class="tl__event tl__event--up tl__event--complementaire" data-kind="Formation courte" data-title="AI for ecologists: a toolkit" data-place="FRB-CESAB" data-date="2026">
             <span class="tl__mark tl__mark--dot" style="--s: 2026.6;"></span>
             <span class="tl__label" style="--s: 2026.6;">IA pour écologues</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--complementaire" title="Méthodes et outils de diagnostic écologique en milieux terrestres, MNHN / OFB (10/2026, 21 h)">
+          <li class="tl__event tl__event--up tl__event--complementaire" data-kind="Formation courte" data-title="Méthodes et outils de diagnostic écologique en milieux terrestres" data-place="MNHN / OFB" data-date="10/2026 · 21 h">
             <span class="tl__mark tl__mark--dot" style="--s: 2026.79;"></span>
             <span class="tl__label" style="--s: 2026.79;">Diagnostic écologique</span>
           </li>
@@ -184,47 +185,47 @@
           <span class="tl__year" style="--s: 2023;">2023</span>
           <span class="tl__year" style="--s: 2024; --e: 2024.4;">2024</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--complementaire" title="Programmation Python, MNHN (02/2022, 10 h)">
+          <li class="tl__event tl__event--up tl__event--complementaire" data-kind="Formation courte" data-title="Programmation Python" data-place="MNHN" data-date="02/2022 · 10 h">
             <span class="tl__mark tl__mark--dot" style="--s: 2022.08;"></span>
             <span class="tl__label" style="--s: 2022.08;">Python</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--complementaire" title="Information scientifique et technique pour la thèse, MNHN (04/2022, 16 h)">
+          <li class="tl__event tl__event--down tl__event--complementaire" data-kind="Formation courte" data-title="Information scientifique et technique pour la thèse" data-place="MNHN" data-date="04/2022 · 16 h">
             <span class="tl__mark tl__mark--dot" style="--s: 2022.25;"></span>
             <span class="tl__label" style="--s: 2022.25;">Recherche documentaire</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--complementaire" title="Intégrité scientifique dans les métiers de la recherche, MOOC Université de Bordeaux (06/2022, 15 h)">
+          <li class="tl__event tl__event--up tl__event--complementaire" data-kind="Formation courte" data-title="Intégrité scientifique dans les métiers de la recherche" data-place="MOOC Université de Bordeaux" data-date="06/2022 · 15 h">
             <span class="tl__mark tl__mark--dot" style="--s: 2022.42;"></span>
             <span class="tl__label" style="--s: 2022.42;">Intégrité scientifique</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--complementaire" title="Vivre avec les autres animaux, MOOC Uved (07/2022, 7 h)">
+          <li class="tl__event tl__event--down tl__event--complementaire" data-kind="Formation courte" data-title="Vivre avec les autres animaux" data-place="MOOC Uved" data-date="07/2022 · 7 h">
             <span class="tl__mark tl__mark--dot" style="--s: 2022.5;"></span>
             <span class="tl__label" style="--s: 2022.5;">Vivre avec les animaux</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--complementaire" title="FocusLab Biomimétisme, Institut des Futurs souhaitables (10–12/2022, 35 h)">
+          <li class="tl__event tl__event--up tl__event--complementaire" data-kind="Formation courte" data-title="FocusLab Biomimétisme" data-place="Institut des Futurs souhaitables" data-date="10 – 12/2022 · 35 h">
             <span class="tl__mark" style="--s: 2022.75; --e: 2023;"></span>
             <span class="tl__label" style="--s: 2022.75;">Biomimétisme</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--complementaire" title="Plateforme HAL Archives Ouvertes, MNHN (11/2022, 2 h)">
+          <li class="tl__event tl__event--down tl__event--complementaire" data-kind="Formation courte" data-title="Plateforme HAL Archives Ouvertes" data-place="MNHN" data-date="11/2022 · 2 h">
             <span class="tl__mark tl__mark--dot" style="--s: 2022.83;"></span>
             <span class="tl__label" style="--s: 2022.83;">HAL</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--complementaire" title="Élaboration du projet professionnel, MNHN / Sorbonne Université (12/2022, 24 h)">
+          <li class="tl__event tl__event--down tl__event--complementaire" data-kind="Formation courte" data-title="Élaboration du projet professionnel" data-place="MNHN / Sorbonne Université" data-date="12/2022 · 24 h">
             <span class="tl__mark tl__mark--dot" style="--s: 2022.92;"></span>
             <span class="tl__label" style="--s: 2022.92;">Projet professionnel</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--complementaire" title="Égalité Femmes-Hommes &amp; Science, MNHN (03/2023, 7 h)">
+          <li class="tl__event tl__event--up tl__event--complementaire" data-kind="Formation courte" data-title="Égalité Femmes-Hommes &amp; Science" data-place="MNHN" data-date="03/2023 · 7 h">
             <span class="tl__mark tl__mark--dot" style="--s: 2023.17;"></span>
             <span class="tl__label" style="--s: 2023.17;">Égalité F-H</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--complementaire" title="Gestion des conflits, MNHN (05/2023, 6 h)">
+          <li class="tl__event tl__event--up tl__event--complementaire" data-kind="Formation courte" data-title="Gestion des conflits" data-place="MNHN" data-date="05/2023 · 6 h">
             <span class="tl__mark tl__mark--dot" style="--s: 2023.33;"></span>
             <span class="tl__label" style="--s: 2023.33;">Gestion des conflits</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--complementaire" title="Prévention des violences sexistes et sexuelles, EGAE / MNHN (05/2023, 2 h)">
+          <li class="tl__event tl__event--down tl__event--complementaire" data-kind="Formation courte" data-title="Prévention des violences sexistes et sexuelles" data-place="EGAE / MNHN" data-date="05/2023 · 2 h">
             <span class="tl__mark tl__mark--dot" style="--s: 2023.36;"></span>
             <span class="tl__label" style="--s: 2023.36;">Prévention VSS</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--complementaire" title="Discrimination : comprendre pour agir, CNFPT (02/2024, 6 h)">
+          <li class="tl__event tl__event--up tl__event--complementaire" data-kind="Formation courte" data-title="Discrimination : comprendre pour agir" data-place="CNFPT" data-date="02/2024 · 6 h">
             <span class="tl__mark tl__mark--dot" style="--s: 2024.08;"></span>
             <span class="tl__label" style="--s: 2024.08;">Discrimination</span>
           </li>
@@ -700,6 +701,6 @@
     </svg>
   </footer>
 
-  <script src="js/main.js?v=24"></script>
+  <script src="js/main.js?v=26"></script>
 </body>
 </html>

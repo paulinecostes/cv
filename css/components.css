@@ -994,3 +994,94 @@
   border-left-color: var(--green-200);
   color: var(--green-700);
 }
+
+/* Bulle de détail au survol des éléments de la frise */
+.tl-tip {
+  --c: var(--green-700);
+  --arrow-x: 50%;
+  position: fixed;
+  z-index: 200;
+  max-width: 290px;
+  padding: 10px 14px 11px;
+  border: 1px solid var(--green-200);
+  border-top: 3px solid var(--c);
+  border-radius: 10px;
+  background: var(--white);
+  box-shadow: 0 10px 28px rgba(45, 74, 45, 0.16);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--earth-800);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.tl-tip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tl-tip--below {
+  transform: translateY(-4px);
+}
+
+.tl-tip::after {
+  content: "";
+  position: absolute;
+  left: var(--arrow-x);
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-right: 1px solid var(--green-200);
+  border-bottom: 1px solid var(--green-200);
+  background: var(--white);
+  transform: rotate(45deg);
+}
+
+.tl-tip--below::after {
+  top: -7px;
+  bottom: auto;
+  border: none;
+  border-top: 1px solid var(--c);
+  border-left: 1px solid var(--c);
+  background: var(--c);
+}
+
+.tl-tip__kicker {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c);
+}
+
+.tl-tip__title {
+  display: block;
+  font-weight: 600;
+}
+
+.tl-tip__place {
+  display: block;
+  margin-top: 1px;
+  color: var(--earth-600);
+}
+
+.tl-tip__date {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 1px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--green-50);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--c);
+}
+
+.tl__label:focus-visible {
+  outline: 2px solid var(--c);
+  outline-offset: 2px;
+}

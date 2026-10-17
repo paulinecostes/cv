@@ -119,3 +119,68 @@ legendButtons.forEach(btn => {
     }
   });
 });
+
+// Bulles de détail au survol, au clavier et au toucher
+if (timeline) {
+  const tip = document.createElement('div');
+  tip.className = 'tl-tip';
+  tip.setAttribute('role', 'tooltip');
+  tip.id = 'tl-tip';
+  document.body.appendChild(tip);
+
+  // Contenu : type, intitulé, lieu et dates (attributs data-* de l'élément)
+  function fillTip(data) {
+    tip.replaceChildren();
+    [['tl-tip__kicker', data.kind], ['tl-tip__title', data.title], ['tl-tip__place', data.place], ['tl-tip__date', data.date]].forEach(([cls, value]) => {
+      if (!value) return;
+      const span = document.createElement('span');
+      span.className = cls;
+      span.textContent = value;
+      tip.appendChild(span);
+    });
+  }
+
+  function showTip(event, target) {
+    fillTip(event.dataset);
+    tip.style.setProperty('--c', getComputedStyle(target).getPropertyValue('--c'));
+    tip.classList.remove('tl-tip--below');
+    tip.classList.add('visible');
+    const r = target.getBoundingClientRect();
+    const t = tip.getBoundingClientRect();
+    const center = r.left + Math.min(r.width, 60) / 2;
+    const left = Math.min(Math.max(8, center - t.width / 2), window.innerWidth - t.width - 8);
+    let top = r.top - t.height - 12;
+    if (top < 8) {
+      top = r.bottom + 12;
+      tip.classList.add('tl-tip--below');
+    }
+    tip.style.left = left + 'px';
+    tip.style.top = top + 'px';
+    tip.style.setProperty('--arrow-x', Math.min(Math.max(14, center - left), t.width - 14) + 'px');
+  }
+
+  function hideTip() {
+    tip.classList.remove('visible');
+  }
+
+  timeline.querySelectorAll('.tl__event[data-title]').forEach(event => {
+    event.querySelectorAll('.tl__label, .tl__mark').forEach(target => {
+      target.addEventListener('mouseenter', () => showTip(event, target));
+      target.addEventListener('mouseleave', hideTip);
+      target.addEventListener('click', () => showTip(event, target));
+    });
+    const label = event.querySelector('.tl__label');
+    if (label) {
+      label.tabIndex = 0;
+      label.setAttribute('aria-describedby', 'tl-tip');
+      label.addEventListener('focus', () => showTip(event, label));
+      label.addEventListener('blur', hideTip);
+    }
+  });
+
+  timeline.addEventListener('scroll', hideTip, { passive: true });
+  window.addEventListener('scroll', hideTip, { passive: true });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.tl__label, .tl__mark')) hideTip();
+  });
+}
