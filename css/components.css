@@ -671,8 +671,10 @@
 
 .tl-legend__item--formation,
 .tl__event--formation { --c: var(--green-900); }
+.tl-legend__item--stage,
+.tl__event--stage { --c: var(--leaf-500); }
 .tl-legend__item--pro,
-.tl__event--pro { --c: var(--green-700); }
+.tl__event--pro { --c: var(--plum-600); }
 .tl-legend__item--autres,
 .tl__event--autres { --c: var(--orange-500); }
 .tl-legend__item--complementaire,
@@ -740,6 +742,7 @@
   height: 6px;
   border-radius: 3px;
   background: var(--c);
+  box-shadow: 0 0 0 1.5px var(--white); /* détache les repères qui se chevauchent */
   z-index: 1;
 }
 
