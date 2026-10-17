@@ -243,6 +243,58 @@ main {
   margin: 0 auto;
 }
 
+/* Bandeau compétences clés (pages domaines) */
+.skills-band {
+  background: var(--green-900);
+  padding: var(--space-lg) 0;
+}
+
+.skills-band__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.skills-band__title {
+  margin: 0;
+  font-family: inherit;
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green-200);
+  white-space: nowrap;
+}
+
+.skills-band__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills-band .tag {
+  background: rgba(254, 254, 254, 0.1);
+  border-color: rgba(197, 213, 192, 0.45);
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .skills-band__inner {
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--space-lg);
+  }
+
+  .skills-band__list {
+    justify-content: flex-start;
+  }
+}
+
 /* En-tête avec photo (page CV) */
 .page-header__with-photo {
   display: flex;
