@@ -54,7 +54,7 @@
     <!-- Frise chronologique
          Pour modifier un élément : --s / --e = début / fin en années décimales (2019.5 = juillet 2019) ;
          un repère sans --e est un point. tl__event--up / --down = au-dessus / en dessous de la ligne.
-         Les étages des libellés sont calculés automatiquement (js/main.js). -->
+         Les étages des libellés sont calculés automatiquement (js/main.js) ; data-lvl="0" sur un libellé impose son étage. -->
     <section class="section">
       <div class="container">
         <div class="section__header" style="margin-bottom: var(--space-lg);">
@@ -121,7 +121,7 @@
           <!-- Le doctorat est à la fois une formation et une expérience pro : ruban bicolore -->
           <li class="tl__event tl__event--up tl__event--both" title="Doctorat MNHN / CNRS (11/2021–12/2024) : formation doctorale et expérience professionnelle de doctorante — éthologie morpho-fonctionnelle de la trompe des éléphants">
             <span class="tl__mark" style="--s: 2021.83; --e: 2024.92;"></span>
-            <span class="tl__label" style="--s: 2021.83;"><span class="tl__gradient-text">Doctorat MNHN</span></span>
+            <span class="tl__label" data-lvl="0" style="--s: 2021.83;"><span class="tl__gradient-text">Doctorat MNHN</span></span>
           </li>
           <li class="tl__event tl__event--down tl__event--pro" title="Chargée de TP : UVSQ (L1, 16 h, 03/2023) et Paris Nanterre (L3, 48 h, 10–12/2023)">
             <span class="tl__mark" style="--s: 2023.17; --e: 2023.25;"></span><span class="tl__mark" style="--s: 2023.75; --e: 2024;"></span>
@@ -661,6 +661,6 @@
     </svg>
   </footer>
 
-  <script src="js/main.js?v=8"></script>
+  <script src="js/main.js?v=18"></script>
 </body>
 </html>

@@ -70,14 +70,14 @@ function layoutPlot(plot) {
       return { label, left: flip ? x - w : x, right: flip ? x : x + w };
     }).sort((a, b) => a.left - b.left);
 
+    // Un libellé peut imposer son étage avec data-lvl ; il est placé en premier
     const levels = [];
-    boxes.forEach(box => {
-      let lvl = levels.findIndex(end => end < box.left - 10);
-      if (lvl === -1) {
-        lvl = levels.length;
-        levels.push(0);
-      }
-      levels[lvl] = box.right;
+    const fits = (lvl, box) => (levels[lvl] || []).every(o => box.right < o.left - 10 || box.left > o.right + 10);
+    const pinned = box => box.label.dataset.lvl !== undefined;
+    [...boxes.filter(pinned), ...boxes.filter(box => !pinned(box))].forEach(box => {
+      let lvl = pinned(box) ? Number(box.label.dataset.lvl) : 0;
+      while (!pinned(box) && !fits(lvl, box)) lvl++;
+      (levels[lvl] = levels[lvl] || []).push(box);
       box.label.style.setProperty('--lvl', lvl);
     });
     counts[side] = Math.max(1, levels.length);
