@@ -1147,3 +1147,49 @@
   outline: 2px solid var(--c);
   outline-offset: 2px;
 }
+
+/* « Ce que je peux apporter » (page Ingénierie écologique) */
+.offer-intro {
+  max-width: 760px;
+  margin: 0 auto var(--space-xl);
+  line-height: 1.8;
+  color: var(--earth-600);
+  text-align: center;
+}
+
+.offer-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .offer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  border-top: 4px solid var(--green-700);
+}
+
+.offer__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: 600;
+  color: var(--green-900);
+}
+
+/* Encadré de disponibilité */
+.availability {
+  max-width: 720px;
+  text-align: center;
+}
+
+.availability p {
+  margin: var(--space-md) 0 var(--space-lg);
+  line-height: 1.7;
+  color: var(--earth-600);
+}
