@@ -693,7 +693,7 @@
 .tl__plot {
   --y0: 2012.85;
   --span: 14.3;
-  --axis-y: calc(var(--nu) * 22px + 24px);
+  --axis-y: calc(var(--nu) * 22px + 32px);
   position: relative;
   min-width: 900px;
   height: calc(var(--axis-y) + var(--nd) * 22px + 22px);
@@ -758,6 +758,9 @@
 
 .tl__event--up .tl__mark--dot { top: calc(var(--axis-y) - 20px); }
 
+/* La formation a sa propre piste, parallèle à celle des expériences */
+.tl__event--formation .tl__mark { top: calc(var(--axis-y) - 25px); }
+
 .tl__mark--diffus {
   background: repeating-linear-gradient(-45deg, var(--c) 0 3px, transparent 3px 6px);
   box-shadow: inset 0 0 0 1px var(--c);
@@ -790,8 +793,10 @@
 }
 
 .tl__event--up .tl__label {
-  top: calc(var(--axis-y) - 38px - var(--lvl) * 22px);
+  top: calc(var(--axis-y) - 46px - var(--lvl) * 22px);
 }
+
+.tl__event--up .tl__label::before { height: calc(18px + var(--lvl) * 22px); }
 
 .tl__event--up .tl__label::before { top: 100%; }
 
