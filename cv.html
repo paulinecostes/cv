@@ -54,7 +54,8 @@
     <!-- Frise chronologique
          Pour modifier un élément : --s / --e = début / fin en années décimales (2019.5 = juillet 2019) ;
          un repère sans --e est un point. tl__event--up / --down = au-dessus / en dessous de la ligne.
-         Les étages des libellés sont calculés automatiquement (js/main.js) ; data-lvl="0" sur un libellé impose son étage.
+         Les étages des libellés sont calculés automatiquement (js/main.js) ; data-lvl="0" sur un libellé impose son étage,
+         data-flip l'affiche à gauche de son repère.
          tl__label--fan : libellé centré sur --s, relié à chacun des repères de l'élément par un trait (éventail).
          Bulle de détail : data-kind (type), data-title (intitulé), data-place (lieu), data-date (dates). -->
     <section class="section">
@@ -157,7 +158,7 @@
           </li>
           <li class="tl__event tl__event--down tl__event--pro" data-kind="Expérience pro" data-title="Animatrice extrascolaire" data-place="MUC Montpellier" data-date="01 – 03/2026">
             <span class="tl__mark" style="--s: 2026; --e: 2026.25;"></span>
-            <span class="tl__label" data-lvl="0" style="--s: 2026;">Animatrice</span>
+            <span class="tl__label" data-lvl="0" data-flip style="--s: 2026.25;">Animatrice</span>
           </li>
           <li class="tl__event tl__event--down tl__event--pro" data-kind="Expérience pro" data-title="Animatrice périscolaire" data-place="IFAC Occitanie" data-date="depuis le 15/09/2026 · en cours">
             <span class="tl__mark tl__mark--ongoing" style="--s: 2026.71; --e: 2026.95;"></span>
@@ -702,6 +703,6 @@
     </svg>
   </footer>
 
-  <script src="js/main.js?v=30"></script>
+  <script src="js/main.js?v=31"></script>
 </body>
 </html>

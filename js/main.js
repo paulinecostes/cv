@@ -66,7 +66,8 @@ function layoutPlot(plot) {
       const w = label.offsetWidth;
       // offsetLeft ignore le translateX(-50%) des libellés centrés
       const x = label.offsetLeft - (label.classList.contains('tl__label--fan') ? w / 2 : 0);
-      const flip = !label.classList.contains('tl__label--fan') && x + w > width - 2;
+      // data-flip : libellé à gauche de son repère ; sinon seulement s'il déborde à droite
+      const flip = !label.classList.contains('tl__label--fan') && (label.dataset.flip !== undefined || x + w > width - 2);
       label.classList.toggle('tl__label--flip', flip);
       const fan = label.classList.contains('tl__label--fan');
       // stem : position du trait vertical (aucun pour un éventail)
