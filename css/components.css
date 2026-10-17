@@ -423,12 +423,13 @@
 
 /* Tag cliquable (lien vers une carte de la page) */
 .tag--link {
+  align-self: flex-start;
   text-decoration: none;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
 .tag--link::after {
-  content: " \2193";
+  content: " \2192";
 }
 
 .tag--link:hover,
