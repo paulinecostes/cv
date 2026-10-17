@@ -1278,15 +1278,8 @@
 }
 
 @media (min-width: 768px) {
-  .offer--wide,
-  .offer--full {
+  .offer--wide {
     grid-column: 1 / -1;
-  }
-}
-
-@media (min-width: 1024px) {
-  .offer--full {
-    grid-template-columns: 24% 1fr;
   }
 }
 
