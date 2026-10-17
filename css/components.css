@@ -731,7 +731,7 @@
 .tl-legend__item--stage,
 .tl__event--stage { --c: var(--leaf-500); }
 .tl-legend__item--asso,
-.tl__event--asso { --c: var(--plum-600); }
+.tl__event--asso { --c: var(--teal-600); }
 .tl-legend__item--pro,
 .tl__event--pro { --c: var(--orange-500); }
 .tl__event--complementaire { --c: var(--green-900); } /* formations courtes = formation */
