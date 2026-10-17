@@ -229,56 +229,6 @@ main {
   }
 }
 
-/* ===== Galerie photos ===== */
-
-.gallery {
-  display: grid;
-  gap: var(--space-md);
-  margin: 0;
-}
-
-.gallery__item {
-  margin: 0;
-}
-
-.gallery__item img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-}
-
-@media (min-width: 768px) {
-  .gallery {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  .gallery__item img {
-    height: 340px;
-    aspect-ratio: auto;
-  }
-}
-
-/* Galerie d'une seule photo : centrée, sans recadrage en paysage */
-.gallery--single {
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .gallery--single {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery--single .gallery__item img {
-    height: auto;
-    aspect-ratio: 4 / 5;
-  }
-}
-
 /* ===== Page header (sub-pages) ===== */
 
 .page-header {
