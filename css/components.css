@@ -674,7 +674,7 @@
 .tl-legend__item--pro,
 .tl__event--pro { --c: var(--green-700); }
 .tl-legend__item--autres,
-.tl__event--autres { --c: var(--gold-500); }
+.tl__event--autres { --c: var(--orange-500); }
 .tl-legend__item--complementaire,
 .tl__event--complementaire { --c: var(--blue-600); }
 
