@@ -675,8 +675,9 @@
 .tl__event--stage { --c: var(--leaf-500); }
 .tl-legend__item--pro,
 .tl__event--pro { --c: var(--orange-500); }
-.tl-legend__item--complementaire,
 .tl__event--complementaire { --c: var(--blue-600); }
+/* Sur la ligne principale, les formations courtes sont de la formation ; seul l'encart garde le bleu */
+.tl__plot:not(.tl__plot--zoom) .tl__event--complementaire { --c: var(--green-900); }
 
 .tl {
   overflow-x: auto;
