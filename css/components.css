@@ -859,6 +859,13 @@
   background: linear-gradient(to bottom, var(--green-900) 0 6px, var(--white) 6px 9px, var(--orange-500) 9px);
 }
 
+/* Repères au-dessus du ruban du doctorat (page médiation) : piste et libellés décalés vers le haut */
+.tl__plot:has(.tl__event--above) { --axis-y: calc(var(--nu) * 22px + 44px); }
+.tl__event--up.tl__event--above .tl__mark { top: calc(var(--axis-y) - 34px); }
+.tl__event--up.tl__event--above .tl__mark--dot { top: calc(var(--axis-y) - 36px); }
+.tl__event--up.tl__event--above .tl__label { top: calc(var(--axis-y) - 58px - var(--lvl) * 22px); }
+.tl__event--up.tl__event--above .tl__label::before { height: calc(6px + var(--lvl) * 22px); }
+
 .tl__gradient-text {
   background-image: linear-gradient(90deg, var(--green-900), var(--orange-500));
   -webkit-background-clip: text;
