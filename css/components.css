@@ -827,10 +827,25 @@
 /* La formation a sa propre piste, parallèle à celle des expériences */
 .tl__event--formation .tl__mark { top: calc(var(--axis-y) - 25px); }
 
-/* Les engagements associatifs ont leur propre piste, sous celle des expériences */
-.tl__event--down.tl__event--asso .tl__mark { top: calc(var(--axis-y) + 19px); }
+/* Sous la règle de la ligne principale, trois pistes : engagements associatifs contre la règle,
+   puis expériences, puis formations courtes ; les libellés commencent sous la dernière piste */
+.tl > .tl__plot {
+  height: calc(var(--axis-y) + var(--nd) * 22px + 44px);
+}
 
-/* Les formations complémentaires ont leur propre piste, sous celle des expériences */
+.tl > .tl__plot .tl__event--down .tl__mark { top: calc(var(--axis-y) + 19px); }
+.tl > .tl__plot .tl__event--down .tl__mark--dot { top: calc(var(--axis-y) + 17px); }
+.tl > .tl__plot .tl__event--down.tl__event--asso .tl__mark { top: calc(var(--axis-y) + 10px); }
+.tl > .tl__plot .tl__event--down.tl__event--complementaire .tl__mark { top: calc(var(--axis-y) + 31px); }
+.tl > .tl__plot .tl__event--down.tl__event--complementaire .tl__mark--dot { top: calc(var(--axis-y) + 29px); }
+
+.tl > .tl__plot .tl__event--down .tl__label {
+  top: calc(var(--axis-y) + 42px + var(--lvl) * 22px);
+}
+
+.tl > .tl__plot .tl__event--down .tl__label::before { height: calc(32px + var(--lvl) * 22px); }
+
+/* Formations courtes de l'encart : piste sous celle des expériences */
 .tl__event--down.tl__event--complementaire .tl__mark { top: calc(var(--axis-y) + 19px); }
 .tl__event--down.tl__event--complementaire .tl__mark--dot { top: calc(var(--axis-y) + 17px); }
 
@@ -970,7 +985,7 @@
   content: "";
   position: absolute;
   top: 100%;
-  height: calc(var(--nd) * 22px + 30px);
+  height: calc(var(--nd) * 22px + 44px);
   border-left: 1px dashed var(--green-700);
   opacity: 0.6;
 }
