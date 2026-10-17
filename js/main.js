@@ -48,3 +48,13 @@ document.querySelectorAll('.accordion__trigger').forEach(trigger => {
     }
   });
 });
+
+// Frise chronologique : sur petit écran, démarrer vers les années récentes
+const frise = document.querySelector('.frise');
+if (frise && frise.scrollWidth > frise.clientWidth) {
+  // offsetLeft est relatif à l'axe, qui commence juste après la colonne fixe des libellés
+  const year = frise.querySelector('.frise__year[style*="2018"]');
+  if (year) {
+    frise.scrollLeft = year.offsetLeft - 8;
+  }
+}

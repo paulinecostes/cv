@@ -640,3 +640,140 @@
   margin-top: var(--space-sm);
   font-size: var(--text-small);
 }
+
+/* ===== Frise chronologique (CV) ===== */
+
+.frise {
+  --frise-y0: 2013;
+  --frise-span: 14;
+  --frise-row: 30px;
+  overflow-x: auto;
+  border: 1px solid var(--green-200);
+  border-radius: var(--radius-md);
+  background: var(--white);
+}
+
+.frise:focus-visible {
+  outline: 2px solid var(--green-700);
+  outline-offset: 2px;
+}
+
+.frise__inner {
+  display: grid;
+  grid-template-columns: 130px minmax(1050px, 1fr);
+  width: max-content;
+  min-width: 100%;
+}
+
+.frise__lane-label {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: var(--white);
+  border-right: 1px solid var(--green-200);
+  border-top: 1px solid var(--green-200);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-tag);
+  font-weight: 600;
+  color: var(--green-900);
+  line-height: 1.3;
+}
+
+.frise__lane-label--axis {
+  border-top: none;
+}
+
+.frise__axis,
+.frise__track {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-right: 120px; /* place pour les libellés en fin de frise */
+  background-image: repeating-linear-gradient(to right, var(--green-50) 0 1px, transparent 1px calc(100% / var(--frise-span)));
+}
+
+.frise__axis {
+  height: 32px;
+}
+
+.frise__year {
+  position: absolute;
+  bottom: 6px;
+  left: calc((var(--start) - var(--frise-y0)) / var(--frise-span) * 100%);
+  padding-left: 4px;
+  font-size: var(--text-tag);
+  font-weight: 500;
+  color: var(--green-700);
+}
+
+.frise__track {
+  height: calc(var(--rows) * var(--frise-row) + 12px);
+  border-top: 1px solid var(--green-200);
+  --lane-color: var(--green-700);
+}
+
+.frise__track--formation { --lane-color: var(--green-900); }
+.frise__track--pro { --lane-color: var(--green-700); }
+.frise__track--autres { --lane-color: var(--gold-500); }
+.frise__track--complementaire { --lane-color: var(--earth-600); }
+
+.frise__item {
+  position: absolute;
+  top: calc(var(--row) * var(--frise-row) + 15px);
+  left: calc((var(--start) - var(--frise-y0)) / var(--frise-span) * 100%);
+  width: calc((var(--end) - var(--start)) / var(--frise-span) * 100%);
+  min-width: 10px;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--lane-color);
+  cursor: default;
+}
+
+.frise__item--point {
+  width: 12px;
+  margin-left: -6px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 1px var(--lane-color);
+}
+
+.frise__item--diffus {
+  background: repeating-linear-gradient(45deg, var(--lane-color) 0 4px, transparent 4px 8px);
+  box-shadow: inset 0 0 0 1px var(--lane-color);
+}
+
+.frise__label {
+  position: absolute;
+  left: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 0.75rem;
+  color: var(--earth-800);
+}
+
+.frise__item:hover .frise__label {
+  color: var(--green-700);
+  font-weight: 600;
+}
+
+.frise__hint {
+  margin-top: var(--space-sm);
+  font-size: var(--text-tag);
+  color: var(--earth-600);
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .frise__inner {
+    grid-template-columns: 92px minmax(1050px, 1fr);
+  }
+
+  .frise__lane-label {
+    padding: var(--space-sm);
+    font-size: 0.7rem;
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+}
