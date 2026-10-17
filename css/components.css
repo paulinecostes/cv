@@ -1215,6 +1215,24 @@
   color: var(--green-900);
 }
 
+/* Carte pleine largeur (cadre réglementaire) */
+.offer--wide {
+  border-top-color: var(--green-900);
+  background: linear-gradient(to bottom right, var(--white), var(--green-50));
+}
+
+.offer__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .offer--wide {
+    grid-column: 1 / -1;
+  }
+}
+
 /* Encadré de disponibilité */
 .availability {
   max-width: 720px;
