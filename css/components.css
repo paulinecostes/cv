@@ -756,6 +756,13 @@
   list-style: none;
 }
 
+/* Marge à droite où les libellés de fin de frise peuvent déborder */
+.tl > .tl__plot,
+.tl__link {
+  min-width: 864px; /* 900px avec la marge */
+  margin-right: 36px;
+}
+
 .tl__ruler {
   position: absolute;
   left: 0;
@@ -965,7 +972,6 @@
 .tl__focus::after { right: 0; }
 
 .tl__link {
-  min-width: 900px;
   height: 30px;
 }
 
