@@ -53,7 +53,10 @@ document.querySelectorAll('.accordion__trigger').forEach(trigger => {
 const timeline = document.querySelector('.tl');
 
 function layoutTimeline() {
-  const plot = timeline.querySelector('.tl__plot');
+  timeline.querySelectorAll('.tl__plot').forEach(layoutPlot);
+}
+
+function layoutPlot(plot) {
   const width = plot.clientWidth;
   const counts = {};
 

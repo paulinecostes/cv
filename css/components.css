@@ -676,7 +676,7 @@
 .tl-legend__item--autres,
 .tl__event--autres { --c: var(--gold-500); }
 .tl-legend__item--complementaire,
-.tl__event--complementaire { --c: var(--earth-600); }
+.tl__event--complementaire { --c: var(--blue-600); }
 
 .tl {
   overflow-x: auto;
@@ -718,7 +718,7 @@
   top: 0;
   bottom: 0;
   left: calc((var(--s) - var(--y0)) / var(--span) * 100%);
-  width: calc(100% / var(--span));
+  width: calc((var(--e, calc(var(--s) + 1)) - var(--s)) / var(--span) * 100%);
   border-left: 1px solid var(--green-200);
   font-size: 0.68rem;
   font-weight: 600;
@@ -816,4 +816,68 @@
 .tl__label:hover {
   color: var(--c);
   font-weight: 600;
+}
+
+/* Loupe sur les formations complémentaires */
+.tl__focus {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: calc((var(--s) - var(--y0)) / var(--span) * 100%);
+  width: calc((var(--e) - var(--s)) / var(--span) * 100%);
+  border: 1px solid var(--blue-600);
+  border-radius: 10px;
+  background: rgba(58, 122, 140, 0.14);
+}
+
+.tl__focus::before,
+.tl__focus::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  height: calc(var(--nd) * 22px + 22px);
+  border-left: 1px dashed var(--blue-600);
+  opacity: 0.6;
+}
+
+.tl__focus::before { left: -1px; }
+.tl__focus::after { right: -1px; }
+
+.tl__link {
+  min-width: 900px;
+  height: 36px;
+}
+
+.tl__link svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.tl__link polygon {
+  fill: rgba(58, 122, 140, 0.07);
+}
+
+.tl__link line {
+  stroke: var(--blue-600);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+  opacity: 0.6;
+  vector-effect: non-scaling-stroke;
+}
+
+.tl__plot--zoom {
+  --c: var(--blue-600);
+}
+
+.tl__plot--zoom .tl__ruler {
+  border-color: var(--blue-100);
+  background: var(--blue-50);
+  box-shadow: 0 0 0 1px rgba(58, 122, 140, 0.25);
+}
+
+.tl__plot--zoom .tl__year {
+  border-left-color: var(--blue-100);
+  color: var(--blue-600);
 }
