@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=15">
-  <link rel="stylesheet" href="css/base.css?v=15">
-  <link rel="stylesheet" href="css/components.css?v=15">
-  <link rel="stylesheet" href="css/layout.css?v=15">
+  <link rel="stylesheet" href="css/variables.css?v=16">
+  <link rel="stylesheet" href="css/base.css?v=16">
+  <link rel="stylesheet" href="css/components.css?v=16">
+  <link rel="stylesheet" href="css/layout.css?v=16">
 </head>
 <body>
 
@@ -64,6 +64,7 @@
           <li class="tl-legend__item tl-legend__item--formation">Formation</li>
           <li class="tl-legend__item tl-legend__item--stage">Stages</li>
           <li class="tl-legend__item tl-legend__item--pro">Exp&eacute;riences professionnelles</li>
+          <li class="tl-legend__item tl-legend__item--both">Formation + exp&eacute;rience pro</li>
           <li class="tl-legend__item tl-legend__item--complementaire">Formations compl&eacute;mentaires</li>
         </ul>
         <div class="tl" tabindex="0" role="region" aria-label="Frise chronologique">
@@ -117,15 +118,10 @@
             <span class="tl__mark" style="--s: 2021; --e: 2021.5;"></span>
             <span class="tl__label" style="--s: 2021;">Namibie</span>
           </li>
-          <!-- Le doctorat est à la fois une formation (au-dessus) et une expérience pro (en dessous) -->
-          <li class="tl__event tl__event--up tl__event--formation tl__event--both" title="Doctorat en Sciences de la Nature et de l'Homme, MNHN Paris (11/2021–12/2024) — aussi une expérience professionnelle">
+          <!-- Le doctorat est à la fois une formation et une expérience pro : ruban bicolore -->
+          <li class="tl__event tl__event--up tl__event--both" title="Doctorat MNHN / CNRS (11/2021–12/2024) : formation doctorale et expérience professionnelle de doctorante — éthologie morpho-fonctionnelle de la trompe des éléphants">
             <span class="tl__mark" style="--s: 2021.83; --e: 2024.92;"></span>
             <span class="tl__label" style="--s: 2021.83;">Doctorat MNHN</span>
-            <span class="tl__bridge" style="--s: 2021.83; --e: 2024.92;" aria-hidden="true"></span>
-          </li>
-          <li class="tl__event tl__event--down tl__event--pro tl__event--both" title="Doctorante CNRS / MNHN : éthologie morpho-fonctionnelle de la trompe des éléphants (11/2021–10/2024) — aussi une formation diplômante">
-            <span class="tl__mark" style="--s: 2021.83; --e: 2024.92;"></span>
-            <span class="tl__label" style="--s: 2021.83;">Doctorante CNRS / MNHN</span>
           </li>
           <li class="tl__event tl__event--down tl__event--pro" title="Chargée de TP : UVSQ (L1, 16 h, 03/2023) et Paris Nanterre (L3, 48 h, 10–12/2023)">
             <span class="tl__mark" style="--s: 2023.17; --e: 2023.25;"></span><span class="tl__mark" style="--s: 2023.75; --e: 2024;"></span>

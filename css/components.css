@@ -766,18 +766,29 @@
 .tl__event--down.tl__event--complementaire .tl__mark { top: calc(var(--axis-y) + 19px); }
 .tl__event--down.tl__event--complementaire .tl__mark--dot { top: calc(var(--axis-y) + 17px); }
 
-/* Doctorat : formation et expérience pro, repéré des deux côtés de la règle */
-.tl__bridge {
-  position: absolute;
-  left: calc((var(--s) - var(--y0)) / var(--span) * 100%);
-  width: calc((var(--e) - var(--s)) / var(--span) * 100%);
+/* Doctorat : formation et expérience pro → ruban vert / orange et libellé en dégradé */
+.tl__event--both { --c: var(--green-900); }
+
+.tl__event--both .tl__mark {
   top: calc(var(--axis-y) - 25px);
-  height: 41px;
-  border-left: 2px solid;
-  border-right: 2px solid;
+  height: 15px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, var(--green-900) 0 6px, var(--white) 6px 9px, var(--orange-500) 9px);
+}
+
+.tl__event--both .tl__label {
+  background: linear-gradient(90deg, var(--green-900), var(--orange-500)) content-box, var(--white);
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  -webkit-text-fill-color: transparent;
+}
+
+.tl__event--both .tl__label::before {
   border-image: linear-gradient(to bottom, var(--green-900), var(--orange-500)) 1;
-  z-index: 2;
-  pointer-events: none;
+}
+
+.tl-legend__item--both::before {
+  background: linear-gradient(to bottom, var(--green-900) 50%, var(--orange-500) 50%);
 }
 
 /* Temps partiel : barre hachurée */
