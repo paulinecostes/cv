@@ -1215,6 +1215,29 @@
   color: var(--green-900);
 }
 
+/* Badge « en cours d'apprentissage » */
+.badge-learning {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #FBF6EA;
+  border: 1px solid var(--gold-500);
+  border-radius: var(--radius-pill);
+  padding: var(--space-xs) 0.75rem;
+  font-size: var(--text-tag);
+  font-weight: 500;
+  color: #7A6125;
+}
+
+.badge-learning::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--gold-500);
+}
+
 /* Carte pleine largeur (cadre réglementaire) */
 .offer--wide {
   border-top-color: var(--green-900);
