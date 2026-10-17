@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=12">
-  <link rel="stylesheet" href="css/base.css?v=12">
-  <link rel="stylesheet" href="css/components.css?v=12">
-  <link rel="stylesheet" href="css/layout.css?v=12">
+  <link rel="stylesheet" href="css/variables.css?v=13">
+  <link rel="stylesheet" href="css/base.css?v=13">
+  <link rel="stylesheet" href="css/components.css?v=13">
+  <link rel="stylesheet" href="css/layout.css?v=13">
 </head>
 <body>
 
@@ -64,7 +64,6 @@
           <li class="tl-legend__item tl-legend__item--formation">Formation</li>
           <li class="tl-legend__item tl-legend__item--stage">Stages</li>
           <li class="tl-legend__item tl-legend__item--pro">Exp&eacute;riences professionnelles</li>
-          <li class="tl-legend__item tl-legend__item--autres">Autres exp&eacute;riences</li>
           <li class="tl-legend__item tl-legend__item--complementaire">Formations compl&eacute;mentaires</li>
         </ul>
         <div class="tl" tabindex="0" role="region" aria-label="Frise chronologique">
@@ -118,35 +117,37 @@
             <span class="tl__mark" style="--s: 2021; --e: 2021.5;"></span>
             <span class="tl__label" style="--s: 2021;">Namibie</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--pro" title="Doctorante CNRS / MNHN : éthologie morpho-fonctionnelle de la trompe des éléphants (11/2021–10/2024), soutenance 12/2024">
+          <!-- Le doctorat est à la fois une formation (au-dessus) et une expérience pro (en dessous) -->
+          <li class="tl__event tl__event--up tl__event--formation tl__event--both" title="Doctorat en Sciences de la Nature et de l'Homme, MNHN Paris (11/2021–12/2024) — aussi une expérience professionnelle">
             <span class="tl__mark" style="--s: 2021.83; --e: 2024.92;"></span>
             <span class="tl__label" style="--s: 2021.83;">Doctorat MNHN</span>
+            <span class="tl__bridge" style="--s: 2021.83; --e: 2024.92;" aria-hidden="true"></span>
           </li>
-          <li class="tl__event tl__event--up tl__event--pro" title="Encadrement de stagiaire : latéralité chez les lamantins, ZooParc de Beauval (07/2022)">
-            <span class="tl__mark" style="--s: 2022.5; --e: 2022.58;"></span>
-            <span class="tl__label" style="--s: 2022.5;">Encadrement</span>
+          <li class="tl__event tl__event--down tl__event--pro tl__event--both" title="Doctorante CNRS / MNHN : éthologie morpho-fonctionnelle de la trompe des éléphants (11/2021–10/2024) — aussi une formation diplômante">
+            <span class="tl__mark" style="--s: 2021.83; --e: 2024.92;"></span>
+            <span class="tl__label" style="--s: 2021.83;">Doctorante CNRS / MNHN</span>
           </li>
-          <li class="tl__event tl__event--up tl__event--pro" title="Chargée de TP : UVSQ (L1, 16 h, 03/2023) et Paris Nanterre (L3, 48 h, 10–12/2023)">
+          <li class="tl__event tl__event--down tl__event--pro" title="Chargée de TP : UVSQ (L1, 16 h, 03/2023) et Paris Nanterre (L3, 48 h, 10–12/2023)">
             <span class="tl__mark" style="--s: 2023.17; --e: 2023.25;"></span><span class="tl__mark" style="--s: 2023.75; --e: 2024;"></span>
             <span class="tl__label" style="--s: 2023.17;">Chargée de TP</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--autres" title="Animatrice assistante d&#x27;équitation, Écuries de Lansargues (2013–2015)">
+          <li class="tl__event tl__event--down tl__event--pro" title="Animatrice assistante d&#x27;équitation, Écuries de Lansargues (2013–2015)">
             <span class="tl__mark" style="--s: 2013; --e: 2015.5;"></span>
             <span class="tl__label" style="--s: 2013;">Assistante d'équitation</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--autres" title="Vendeuse en boulangerie, Histoire de Pain (07/2015)">
+          <li class="tl__event tl__event--down tl__event--pro" title="Vendeuse en boulangerie, Histoire de Pain (07/2015)">
             <span class="tl__mark" style="--s: 2015.5; --e: 2015.58;"></span>
             <span class="tl__label" style="--s: 2015.5;">Boulangerie</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--autres" title="Palefrenière soigneuse, Cheston Farm Equestrian Center (08/2016)">
+          <li class="tl__event tl__event--down tl__event--pro" title="Palefrenière soigneuse, Cheston Farm Equestrian Center (08/2016)">
             <span class="tl__mark" style="--s: 2016.58; --e: 2016.67;"></span>
             <span class="tl__label" style="--s: 2016.58;">Palefrenière (UK)</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--autres" title="Chargée de recrutement / secrétaire, Engie Ineo (2017, 2 mois)">
+          <li class="tl__event tl__event--down tl__event--pro" title="Chargée de recrutement / secrétaire, Engie Ineo (2017, 2 mois)">
             <span class="tl__mark tl__mark--dot" style="--s: 2017.5;"></span>
             <span class="tl__label" style="--s: 2017.5;">Engie Ineo</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--autres" title="Guide équestre, El Rancho (2018–2020, 4 mois cumulés)">
+          <li class="tl__event tl__event--down tl__event--pro" title="Guide équestre, El Rancho (2018–2020, 4 mois cumulés)">
             <span class="tl__mark tl__mark--diffus" style="--s: 2018; --e: 2021;"></span>
             <span class="tl__label" style="--s: 2018;">Guide équestre</span>
           </li>
@@ -154,7 +155,7 @@
             <span class="tl__mark tl__mark--dot" style="--s: 2022.08;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.25;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.42;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.5;"></span><span class="tl__mark" style="--s: 2022.75; --e: 2023;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.83;"></span><span class="tl__mark tl__mark--dot" style="--s: 2022.92;"></span><span class="tl__mark tl__mark--dot" style="--s: 2023.17;"></span><span class="tl__mark tl__mark--dot" style="--s: 2023.33;"></span><span class="tl__mark tl__mark--dot" style="--s: 2024.08;"></span>
             <span class="tl__label" style="--s: 2022.08;">Formations complémentaires</span>
           </li>
-          <li class="tl__event tl__event--down tl__event--autres" title="Animatrice centre de loisirs, MUC Montpellier (2026, 3 mois)">
+          <li class="tl__event tl__event--down tl__event--pro" title="Animatrice centre de loisirs, MUC Montpellier (2026, 3 mois)">
             <span class="tl__mark tl__mark--dot" style="--s: 2026.4;"></span>
             <span class="tl__label" style="--s: 2026.4;">Centre de loisirs</span>
           </li>

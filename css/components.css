@@ -674,9 +674,7 @@
 .tl-legend__item--stage,
 .tl__event--stage { --c: var(--leaf-500); }
 .tl-legend__item--pro,
-.tl__event--pro { --c: var(--plum-600); }
-.tl-legend__item--autres,
-.tl__event--autres { --c: var(--orange-500); }
+.tl__event--pro { --c: var(--orange-500); }
 .tl-legend__item--complementaire,
 .tl__event--complementaire { --c: var(--blue-600); }
 
@@ -698,7 +696,7 @@
   --axis-y: calc(var(--nu) * 22px + 32px);
   position: relative;
   min-width: 900px;
-  height: calc(var(--axis-y) + var(--nd) * 22px + 22px);
+  height: calc(var(--axis-y) + var(--nd) * 22px + 30px);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -764,6 +762,24 @@
 /* La formation a sa propre piste, parallèle à celle des expériences */
 .tl__event--formation .tl__mark { top: calc(var(--axis-y) - 25px); }
 
+/* Les formations complémentaires ont leur propre piste, sous celle des expériences */
+.tl__event--down.tl__event--complementaire .tl__mark { top: calc(var(--axis-y) + 19px); }
+.tl__event--down.tl__event--complementaire .tl__mark--dot { top: calc(var(--axis-y) + 17px); }
+
+/* Doctorat : formation et expérience pro, repéré des deux côtés de la règle */
+.tl__bridge {
+  position: absolute;
+  left: calc((var(--s) - var(--y0)) / var(--span) * 100%);
+  width: calc((var(--e) - var(--s)) / var(--span) * 100%);
+  top: calc(var(--axis-y) - 25px);
+  height: 41px;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-image: linear-gradient(to bottom, var(--green-900), var(--orange-500)) 1;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .tl__mark--diffus {
   background: repeating-linear-gradient(-45deg, var(--c) 0 3px, transparent 3px 6px);
   box-shadow: inset 0 0 0 1px var(--c);
@@ -804,8 +820,10 @@
 .tl__event--up .tl__label::before { top: 100%; }
 
 .tl__event--down .tl__label {
-  top: calc(var(--axis-y) + 20px + var(--lvl) * 22px);
+  top: calc(var(--axis-y) + 28px + var(--lvl) * 22px);
 }
+
+.tl__event--down .tl__label::before { height: calc(18px + var(--lvl) * 22px); }
 
 .tl__event--down .tl__label::before { bottom: 100%; }
 
