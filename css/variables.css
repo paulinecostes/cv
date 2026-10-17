@@ -14,6 +14,17 @@
   /* Colors - Accent */
   --gold-500: #B8963E;
 
+  /* Colors - Frise chronologique */
+  --purple-50: #F5F3FF;
+  --purple-200: #DDD6FE;
+  --purple-500: #8B5CF6;
+  --purple-700: #6D28D9;
+  --orange-50: #FFF7ED;
+  --orange-100: #FFEDD5;
+  --orange-200: #FED7AA;
+  --orange-500: #F97316;
+  --orange-700: #C2410C;
+
   /* Typography */
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
