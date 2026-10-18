@@ -1294,6 +1294,19 @@
   }
 }
 
+/* Liste à puces dans une carte (expériences de terrain) */
+.card__points {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.card__points li::marker {
+  color: var(--green-700);
+}
+
 /* Schéma en étoile : compétences autour d'un texte central (page ingénierie) */
 .skill-star__list {
   list-style: none;
