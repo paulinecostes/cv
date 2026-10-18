@@ -1385,6 +1385,10 @@
   margin: 0 auto;
 }
 
+.skill-star__panel {
+  scroll-margin-top: 96px;
+}
+
 .skill-star__panel[hidden] {
   display: none;
 }

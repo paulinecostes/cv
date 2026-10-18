@@ -248,6 +248,9 @@ if (starBubbles.length) {
       document.getElementById(b.getAttribute('aria-controls')).hidden = !active;
     });
   };
-  starBubbles.forEach((b) => b.addEventListener('click', () => select(b)));
+  starBubbles.forEach((b) => b.addEventListener('click', () => {
+    select(b);
+    document.getElementById(b.getAttribute('aria-controls')).scrollIntoView({ block: 'start' });
+  }));
   select(starBubbles[0]);
 }
