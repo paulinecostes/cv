@@ -355,30 +355,36 @@ main {
 
 .domains-grid--compact {
   gap: var(--space-md);
-  margin-bottom: var(--space-2xl);
+  max-width: 900px;
+  margin: 0 auto var(--space-2xl);
 }
 
 .domains-grid--compact .domain-card {
-  padding: var(--space-md);
-  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md) var(--space-md);
+  gap: var(--space-xs);
 }
 
 .domains-grid--compact .domain-card__icon {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 }
 
 .domains-grid--compact .domain-card__icon svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 .domains-grid--compact .domain-card__title {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .domains-grid--compact .domain-card__description {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.domains-grid--compact .domain-card__link {
+  font-size: 0.75rem;
 }
 
 .home-intro {
