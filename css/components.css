@@ -1491,6 +1491,10 @@
   outline-offset: 2px;
 }
 
+.formation-details__tags {
+  margin-top: var(--space-sm);
+}
+
 .formation-details__body {
   padding: 0 var(--space-lg) var(--space-md);
 }
