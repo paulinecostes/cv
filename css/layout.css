@@ -385,3 +385,19 @@ main {
   max-width: 800px;
   margin: 0 auto;
 }
+
+.hero--home {
+  padding: var(--space-xl) 0;
+}
+
+.hero--home .hero__photo {
+  width: 140px;
+  height: 140px;
+}
+
+@media (min-width: 768px) {
+  .hero--home .hero__photo {
+    width: 160px;
+    height: 160px;
+  }
+}
