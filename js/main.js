@@ -237,3 +237,17 @@ if (timeline) {
     if (!e.target.closest('.tl__label, .tl__mark')) hideTip();
   });
 }
+
+// Schéma en étoile (page ingénierie) : une bulle affiche son détail
+const starBubbles = document.querySelectorAll('.skill-star__bubble');
+if (starBubbles.length) {
+  const select = (bubble) => {
+    starBubbles.forEach((b) => {
+      const active = b === bubble;
+      b.setAttribute('aria-expanded', String(active));
+      document.getElementById(b.getAttribute('aria-controls')).hidden = !active;
+    });
+  };
+  starBubbles.forEach((b) => b.addEventListener('click', () => select(b)));
+  select(starBubbles[0]);
+}
