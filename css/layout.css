@@ -350,3 +350,21 @@ main {
   top: -20px;
   left: -20px;
 }
+
+/* ===== Home intro: text + stacked domain cards ===== */
+
+.home-intro {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 900px) {
+  .home-intro {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+
+  .domains-grid--stacked {
+    grid-template-columns: 1fr;
+  }
+}
