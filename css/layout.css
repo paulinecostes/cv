@@ -351,20 +351,37 @@ main {
   left: -20px;
 }
 
-/* ===== Home intro: text + stacked domain cards ===== */
+/* ===== Home: compact domain cards + intro text ===== */
 
-.home-intro {
-  display: grid;
-  gap: var(--space-xl);
+.domains-grid--compact {
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
 }
 
-@media (min-width: 900px) {
-  .home-intro {
-    grid-template-columns: 3fr 2fr;
-    align-items: start;
-  }
+.domains-grid--compact .domain-card {
+  padding: var(--space-md);
+  gap: var(--space-sm);
+}
 
-  .domains-grid--stacked {
-    grid-template-columns: 1fr;
-  }
+.domains-grid--compact .domain-card__icon {
+  width: 40px;
+  height: 40px;
+}
+
+.domains-grid--compact .domain-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.domains-grid--compact .domain-card__title {
+  font-size: 1.1rem;
+}
+
+.domains-grid--compact .domain-card__description {
+  font-size: 0.8125rem;
+}
+
+.home-intro {
+  max-width: 800px;
+  margin: 0 auto;
 }
