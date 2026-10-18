@@ -441,7 +441,7 @@
 
 /* Carte ciblée par un lien d'ancre */
 [id^="terrain-"] {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 136px;
 }
 
 [id^="terrain-"]:target {
@@ -1399,7 +1399,7 @@
 }
 
 .skill-star__panel {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 136px;
 }
 
 .skill-star__panel[hidden] {
@@ -1522,4 +1522,66 @@
   margin: var(--space-md) 0 var(--space-lg);
   line-height: 1.7;
   color: var(--earth-600);
+}
+
+/* ===== Sommaire de la page (sous l'en-tête, reste visible au défilement) ===== */
+
+.page-toc {
+  position: sticky;
+  top: 64px;
+  z-index: 90;
+  background: var(--white);
+  border-bottom: 1px solid var(--green-200);
+}
+
+.page-toc__list {
+  display: flex;
+  gap: var(--space-sm);
+  overflow-x: auto;
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  scrollbar-width: none;
+}
+
+.page-toc__list::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .page-toc__list {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.page-toc__link {
+  flex: 0 0 auto;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--earth-800);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+}
+
+.page-toc__link:hover {
+  background: var(--green-50);
+  color: var(--green-700);
+}
+
+.page-toc__link--active {
+  background: var(--green-700);
+  color: var(--white);
+}
+
+.page-toc__link--active:hover {
+  background: var(--green-900);
+  color: var(--white);
+}
+
+/* Sections visées par le sommaire : ne pas passer sous l'en-tête et le sommaire */
+main section[id] {
+  scroll-margin-top: 112px;
 }

@@ -37,6 +37,42 @@ if (burger && navLinks) {
   });
 }
 
+// Sommaire de la page : surligne la section en cours de lecture
+const tocLinks = [...document.querySelectorAll('.page-toc__link')];
+if (tocLinks.length) {
+  const tocList = document.querySelector('.page-toc__list');
+  const targets = tocLinks.map(link => document.querySelector(link.getAttribute('href')));
+  let current;
+
+  function updateToc() {
+    // dernière section dont le haut est passé sous l'en-tête et le sommaire
+    let index = 0;
+    targets.forEach((target, i) => {
+      if (target && target.getBoundingClientRect().top <= 140) index = i;
+    });
+    if (index === current) return;
+    current = index;
+    tocLinks.forEach((link, i) => {
+      const active = i === index;
+      link.classList.toggle('page-toc__link--active', active);
+      if (active) {
+        link.setAttribute('aria-current', 'true');
+        // sur petit écran, garder le lien actif visible dans la barre
+        tocList.scrollTo({ left: link.offsetLeft - tocList.offsetLeft - 16, behavior: 'smooth' });
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  let tocFrame;
+  window.addEventListener('scroll', () => {
+    cancelAnimationFrame(tocFrame);
+    tocFrame = requestAnimationFrame(updateToc);
+  }, { passive: true });
+  updateToc();
+}
+
 // Accordions
 document.querySelectorAll('.accordion__trigger').forEach(trigger => {
   trigger.addEventListener('click', () => {

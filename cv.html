@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=52">
-  <link rel="stylesheet" href="css/base.css?v=52">
-  <link rel="stylesheet" href="css/components.css?v=52">
-  <link rel="stylesheet" href="css/layout.css?v=52">
+  <link rel="stylesheet" href="css/variables.css?v=53">
+  <link rel="stylesheet" href="css/base.css?v=53">
+  <link rel="stylesheet" href="css/components.css?v=53">
+  <link rel="stylesheet" href="css/layout.css?v=53">
 </head>
 <body>
 
@@ -54,6 +54,18 @@
       </div>
     </div>
 
+    <!-- Sommaire de la page -->
+    <nav class="page-toc" aria-label="Sommaire de la page">
+      <div class="container page-toc__list">
+        <a href="#apercu" class="page-toc__link">En un coup d’œil</a>
+        <a href="#competences" class="page-toc__link">Compétences clés</a>
+        <a href="#parcours" class="page-toc__link">Formations &amp; expériences</a>
+        <a href="#autres-experiences" class="page-toc__link">Autres expériences</a>
+        <a href="#formations-courtes" class="page-toc__link">Formations courtes</a>
+        <a href="#engagement" class="page-toc__link">Engagement</a>
+      </div>
+    </nav>
+
     <!-- Frise chronologique
          Pour modifier un élément : --s / --e = début / fin en années décimales (2019.5 = juillet 2019) ;
          un repère sans --e est un point. tl__event--up / --down = au-dessus / en dessous de la ligne.
@@ -61,7 +73,7 @@
          data-flip l'affiche à gauche de son repère.
          tl__label--fan : libellé centré sur --s, relié à chacun des repères de l'élément par un trait (éventail).
          Bulle de détail : data-kind (type), data-title (intitulé), data-place (lieu), data-date (dates). -->
-    <section class="section">
+    <section id="apercu" class="section">
       <div class="container">
         <div class="section__header" style="margin-bottom: var(--space-lg);">
           <h2>Mon parcours en un coup d'&oelig;il</h2>
@@ -263,7 +275,7 @@
     </section>
 
     <!-- Competences -->
-    <section class="section section--alt" style="position: relative; overflow: hidden;">
+    <section id="competences" class="section section--alt" style="position: relative; overflow: hidden;">
       <div class="container">
         <div class="section__header">
           <h2>Compétences clés</h2>
@@ -479,7 +491,7 @@
     </section>
 
     <!-- Autres experiences -->
-    <section class="section section--alt">
+    <section id="autres-experiences" class="section section--alt">
       <div class="container" style="max-width: 1100px;">
         <div class="section__header">
           <h2>Autres exp&eacute;riences professionnelles</h2>
@@ -544,7 +556,7 @@
     </section>
 
     <!-- Formations courtes -->
-    <section class="section">
+    <section id="formations-courtes" class="section">
       <div class="container" style="max-width: 1100px;">
         <div class="section__header">
           <h2>Formations courtes</h2>
@@ -639,7 +651,7 @@
     </section>
 
     <!-- Responsabilites -->
-    <section class="section section--sand">
+    <section id="engagement" class="section section--sand">
       <div class="container">
         <div class="section__header">
           <h2>Engagement &amp; responsabilités</h2>
@@ -728,6 +740,6 @@
     </svg>
   </footer>
 
-  <script src="js/main.js?v=34"></script>
+  <script src="js/main.js?v=35"></script>
 </body>
 </html>

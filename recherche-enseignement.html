@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=52">
-  <link rel="stylesheet" href="css/base.css?v=52">
-  <link rel="stylesheet" href="css/components.css?v=52">
-  <link rel="stylesheet" href="css/layout.css?v=52">
+  <link rel="stylesheet" href="css/variables.css?v=53">
+  <link rel="stylesheet" href="css/base.css?v=53">
+  <link rel="stylesheet" href="css/components.css?v=53">
+  <link rel="stylesheet" href="css/layout.css?v=53">
 </head>
 <body>
 
@@ -51,8 +51,21 @@
       </div>
     </div>
 
+    <!-- Sommaire de la page -->
+    <nav class="page-toc" aria-label="Sommaire de la page">
+      <div class="container page-toc__list">
+        <a href="#competences" class="page-toc__link">Compétences clés</a>
+        <a href="#parcours" class="page-toc__link">Mon parcours</a>
+        <a href="#recherche" class="page-toc__link">Recherche</a>
+        <a href="#enseignement" class="page-toc__link">Enseignement &amp; encadrement</a>
+        <a href="#publications" class="page-toc__link">Publications</a>
+        <a href="#conferences" class="page-toc__link">Conférences</a>
+        <a href="#prix" class="page-toc__link">Prix &amp; distinctions</a>
+      </div>
+    </nav>
+
     <!-- Bandeau compétences clés -->
-    <section class="skills-band" aria-labelledby="skills-band-title">
+    <section id="competences" class="skills-band" aria-labelledby="skills-band-title">
       <div class="container skills-band__inner">
         <h2 id="skills-band-title" class="skills-band__title">Comp&eacute;tences cl&eacute;s</h2>
         <ul class="skills-band__list">
@@ -72,7 +85,7 @@
     </section>
 
     <!-- Frise chronologique du domaine : extrait de la frise de cv.html (mêmes réglages, voir le commentaire de cv.html) -->
-    <section class="section">
+    <section id="parcours" class="section">
       <div class="container">
         <div class="section__header" style="margin-bottom: var(--space-lg);">
           <h2>Mon parcours en recherche &amp; enseignement</h2>
@@ -219,7 +232,7 @@
     </section>
 
     <!-- Recherche -->
-    <section class="section">
+    <section id="recherche" class="section">
       <div class="container">
         <h2 style="margin-bottom: var(--space-lg);">Recherche</h2>
         <div class="cards-grid">
@@ -368,7 +381,7 @@
     </section>
 
     <!-- Enseignement -->
-    <section class="section section--alt">
+    <section id="enseignement" class="section section--alt">
       <div class="container">
         <h2 style="margin-bottom: var(--space-lg);">Enseignement &amp; encadrement</h2>
         <div class="cards-grid">
@@ -470,7 +483,7 @@
     </section>
 
     <!-- Publications scientifiques -->
-    <section class="section">
+    <section id="publications" class="section">
       <div class="container" style="max-width: 800px;">
         <p class="text-small" style="margin-bottom: var(--space-xl); color: var(--earth-600);">
           3 publications évaluées par les pairs en tant que première autrice et autrice correspondante.
@@ -504,7 +517,7 @@
       </div>
     </section>
     <!-- Conférences & séminaires -->
-    <section class="section section--alt">
+    <section id="conferences" class="section section--alt">
       <div class="container" style="max-width: 1100px;">
         <h2>Conférences &amp; séminaires</h2>
         <div class="conf-grid">
@@ -538,7 +551,7 @@
       </div>
     </section>
     <!-- Prix & distinctions -->
-    <section class="section">
+    <section id="prix" class="section">
       <div class="container" style="max-width: 800px;">
         <h2>Prix &amp; distinctions</h2>
         <div class="publication" style="border-bottom: none;">
@@ -600,6 +613,6 @@
     </svg>
   </footer>
 
-  <script src="js/main.js?v=34"></script>
+  <script src="js/main.js?v=35"></script>
 </body>
 </html>

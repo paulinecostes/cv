@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=52">
-  <link rel="stylesheet" href="css/base.css?v=52">
-  <link rel="stylesheet" href="css/components.css?v=52">
-  <link rel="stylesheet" href="css/layout.css?v=52">
+  <link rel="stylesheet" href="css/variables.css?v=53">
+  <link rel="stylesheet" href="css/base.css?v=53">
+  <link rel="stylesheet" href="css/components.css?v=53">
+  <link rel="stylesheet" href="css/layout.css?v=53">
 </head>
 <body>
 
@@ -54,8 +54,19 @@
       </div>
     </div>
 
+    <!-- Sommaire de la page -->
+    <nav class="page-toc" aria-label="Sommaire de la page">
+      <div class="container page-toc__list">
+        <a href="#competences" class="page-toc__link">Compétences clés</a>
+        <a href="#parcours" class="page-toc__link">Mon parcours</a>
+        <a href="#apporter" class="page-toc__link">Ce que je peux apporter</a>
+        <a href="#experiences-terrain" class="page-toc__link">Expériences de terrain</a>
+        <a href="#disponibilite" class="page-toc__link">Disponibilité</a>
+      </div>
+    </nav>
+
     <!-- Bandeau compétences clés -->
-    <section class="skills-band" aria-labelledby="skills-band-title">
+    <section id="competences" class="skills-band" aria-labelledby="skills-band-title">
       <div class="container skills-band__inner">
         <h2 id="skills-band-title" class="skills-band__title">Comp&eacute;tences cl&eacute;s</h2>
         <ul class="skills-band__list">
@@ -78,7 +89,7 @@
     </section>
 
     <!-- Frise chronologique du domaine : extrait de la frise de cv.html (mêmes réglages, voir le commentaire de cv.html) -->
-    <section class="section">
+    <section id="parcours" class="section">
       <div class="container">
         <div class="section__header" style="margin-bottom: var(--space-lg);">
           <h2>Mon parcours en ing&eacute;nierie &eacute;cologique</h2>
@@ -218,7 +229,7 @@
     </section>
 
     <!-- Ce que je peux apporter (d'après la lettre de motivation) -->
-    <section class="section section--alt">
+    <section id="apporter" class="section section--alt">
       <div class="container">
         <div class="section__header">
           <h2>Ce que je peux apporter</h2>
@@ -433,7 +444,7 @@
     </section>
 
     <!-- Disponibilité -->
-    <section class="section section--alt">
+    <section id="disponibilite" class="section section--alt">
       <div class="container availability">
         <h2>Disponible pour rejoindre une &eacute;quipe</h2>
         <p>Bas&eacute;e &agrave; Montpellier, titulaire du permis B et v&eacute;hicul&eacute;e, je suis disponible pour des missions de terrain, prospections et suivis de chantier sur l&rsquo;ensemble de l&rsquo;Occitanie.</p>
@@ -490,6 +501,6 @@
     </svg>
   </footer>
 
-  <script src="js/main.js?v=34"></script>
+  <script src="js/main.js?v=35"></script>
 </body>
 </html>
