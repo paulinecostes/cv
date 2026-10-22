@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=61">
-  <link rel="stylesheet" href="css/base.css?v=61">
-  <link rel="stylesheet" href="css/components.css?v=61">
-  <link rel="stylesheet" href="css/layout.css?v=61">
+  <link rel="stylesheet" href="css/variables.css?v=63">
+  <link rel="stylesheet" href="css/base.css?v=63">
+  <link rel="stylesheet" href="css/components.css?v=63">
+  <link rel="stylesheet" href="css/layout.css?v=63">
 </head>
 <body>
 
@@ -325,38 +325,52 @@
         <div class="skill-star">
           <svg class="skill-star__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <line x1="50" y1="50" x2="50" y2="10"/>
-            <line x1="50" y1="50" x2="86" y2="38"/>
-            <line x1="50" y1="50" x2="73" y2="86"/>
-            <line x1="50" y1="50" x2="27" y2="86"/>
-            <line x1="50" y1="50" x2="14" y2="38"/>
+            <line x1="50" y1="50" x2="78" y2="25"/>
+            <line x1="50" y1="50" x2="85" y2="59"/>
+            <line x1="50" y1="50" x2="66" y2="86"/>
+            <line x1="50" y1="50" x2="34" y2="86"/>
+            <line x1="50" y1="50" x2="15" y2="59"/>
+            <line x1="50" y1="50" x2="22" y2="25"/>
           </svg>
           <p class="skill-star__center">Mes connaissances <br>&amp; comp&eacute;tences</p>
           <ul class="skill-star__list">
           <li class="skill-star__item" style="--x: 50%; --y: 10%;">
+            <button type="button" class="skill-star__bubble" aria-expanded="false" aria-controls="apport-expertise">
+              <span class="skill-star__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
+              <span class="skill-star__title">Expertise scientifique &amp; techniques</span>
+            </button>
+          </li>
+          <li class="skill-star__item" style="--x: 78%; --y: 25%;">
             <button type="button" class="skill-star__bubble" aria-expanded="false" aria-controls="apport-protocoles">
               <span class="skill-star__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7.5 14h9"/></svg></span>
               <span class="skill-star__title">Conception de protocoles exp&eacute;rimentaux</span>
             </button>
           </li>
-          <li class="skill-star__item" style="--x: 86%; --y: 38%;">
+          <li class="skill-star__item" style="--x: 85%; --y: 59%;">
             <button type="button" class="skill-star__bubble" aria-expanded="false" aria-controls="apport-analyses">
               <span class="skill-star__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
               <span class="skill-star__title">Analyses quantitatives &amp; reproductibilit&eacute;</span>
             </button>
           </li>
-          <li class="skill-star__item" style="--x: 73%; --y: 86%;">
+          <li class="skill-star__item" style="--x: 66%; --y: 86%;">
             <button type="button" class="skill-star__bubble" aria-expanded="false" aria-controls="apport-projets">
               <span class="skill-star__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
               <span class="skill-star__title">Montage de projets &amp; financements</span>
             </button>
           </li>
-          <li class="skill-star__item" style="--x: 27%; --y: 86%;">
+          <li class="skill-star__item" style="--x: 34%; --y: 86%;">
             <button type="button" class="skill-star__bubble" aria-expanded="false" aria-controls="apport-valorisation">
               <span class="skill-star__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v12H3z"/><path d="M12 16v4"/><path d="M8 20h8"/></svg></span>
               <span class="skill-star__title">Valorisation des r&eacute;sultats</span>
             </button>
           </li>
-          <li class="skill-star__item" style="--x: 14%; --y: 38%;">
+          <li class="skill-star__item" style="--x: 15%; --y: 59%;">
+            <button type="button" class="skill-star__bubble" aria-expanded="false" aria-controls="apport-enseignement">
+              <span class="skill-star__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg></span>
+              <span class="skill-star__title">Enseignement &amp; p&eacute;dagogie</span>
+            </button>
+          </li>
+          <li class="skill-star__item" style="--x: 22%; --y: 25%;">
             <button type="button" class="skill-star__bubble" aria-expanded="false" aria-controls="apport-encadrement">
               <span class="skill-star__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
               <span class="skill-star__title">Encadrement &amp; travail collaboratif</span>
@@ -366,6 +380,19 @@
         </div>
         <p class="skill-star__hint">Cliquez sur une bulle pour en voir le d&eacute;tail.</p>
         <div class="skill-star__panels">
+          <div id="apport-expertise" class="card offer skill-star__panel">
+            <span class="domain-card__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span>
+            <h3 class="offer__title">Expertise scientifique &amp; techniques</h3>
+            <p class="card__description">Expertise à l&rsquo;interface de l&rsquo;éthologie, de la morphologie fonctionnelle et de la biomécanique.</p>
+            <ul class="card__points">
+              <li>Éthologie et observations comportementales.</li>
+              <li>Morphométrie et morphologie fonctionnelle.</li>
+              <li>Biomécanique et cinématique 3D.</li>
+            </ul>
+            <div class="tags">
+              <a class="tag tag--link" href="#recherche">Recherche</a>
+            </div>
+          </div>
           <div id="apport-protocoles" class="card offer skill-star__panel offer--side">
             <div class="offer__side offer__gallery offer__gallery--3">
               <img src="protocole-cameras.jpg" alt="Pauline Costes installant des caméras sur un cadre d&rsquo;observation dans une structure zoologique" width="1600" height="900" loading="lazy" style="object-position: center;">
@@ -418,6 +445,18 @@
               </div>
             </div>
           </div>
+          <div id="apport-enseignement" class="card offer skill-star__panel">
+            <span class="domain-card__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg></span>
+            <h3 class="offer__title">Enseignement &amp; p&eacute;dagogie</h3>
+            <p class="card__description">Enseignement universitaire et formation de publics variés.</p>
+            <ul class="card__points">
+              <li>64&thinsp;h de travaux pratiques en L1 et L3 (UVSQ et Paris Nanterre).</li>
+              <li>Formations doctorales (Python, intégrité scientifique, prévention VSS) et animation de la cellule d&rsquo;écoute du laboratoire.</li>
+            </ul>
+            <div class="tags">
+              <a class="tag tag--link" href="#enseignement">Enseignement</a>
+            </div>
+          </div>
           <div id="apport-encadrement" class="card offer skill-star__panel">
             <span class="domain-card__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
             <h3 class="offer__title">Encadrement &amp; travail collaboratif</h3>
@@ -426,7 +465,7 @@
               <li>Encadrement et co-encadrement d’étudiants (stagiaires de licence)&nbsp;: transmission de la démarche scientifique, formation aux outils d&rsquo;analyse et suivi rédactionnel.</li>
               <li>Habitude du travail en consortium pluridisciplinaire (biologistes, roboticiens, biomécaniciens, soigneurs) et contribution active à la cohésion et à la vie de laboratoire.</li>
             </ul>
-            <a class="tag tag--link" href="#enseignement">Enseignement &amp; encadrement</a>
+            <a class="tag tag--link" href="#enseignement">Encadrement</a>
           </div>
         </div>
       </div>
