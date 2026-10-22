@@ -1159,6 +1159,27 @@
   color: var(--earth-600);
 }
 
+.tl-tip--interactive.visible {
+  pointer-events: auto;
+}
+
+.tl-tip__link {
+  display: block;
+  margin-top: 6px;
+  font-weight: 600;
+  color: var(--green-700);
+  text-decoration: none;
+}
+
+.tl-tip__link::after {
+  content: " \2192";
+}
+
+.tl-tip__link:hover,
+.tl-tip__link:focus-visible {
+  text-decoration: underline;
+}
+
 .tl-tip__date {
   display: inline-block;
   margin-top: 6px;

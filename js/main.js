@@ -227,9 +227,18 @@ if (timeline) {
       span.textContent = value;
       tip.appendChild(span);
     });
+    if (data.link) {
+      const link = document.createElement('a');
+      link.className = 'tl-tip__link';
+      link.href = data.link;
+      link.textContent = 'Voir enseignement & encadrement';
+      tip.appendChild(link);
+    }
+    tip.classList.toggle('tl-tip--interactive', Boolean(data.link));
   }
 
   function showTip(event, target) {
+    clearTimeout(hideTimer);
     fillTip(event.dataset);
     tip.style.setProperty('--c', getComputedStyle(target).getPropertyValue('--c'));
     tip.classList.remove('tl-tip--below');
@@ -248,14 +257,25 @@ if (timeline) {
     tip.style.setProperty('--arrow-x', Math.min(Math.max(14, center - left), t.width - 14) + 'px');
   }
 
+  let hideTimer;
   function hideTip() {
+    clearTimeout(hideTimer);
     tip.classList.remove('visible');
   }
+
+  // Bulle avec lien : léger délai pour pouvoir y glisser la souris
+  function leaveTarget() {
+    if (!tip.classList.contains('tl-tip--interactive')) return hideTip();
+    hideTimer = setTimeout(hideTip, 250);
+  }
+
+  tip.addEventListener('mouseenter', () => clearTimeout(hideTimer));
+  tip.addEventListener('mouseleave', hideTip);
 
   timeline.querySelectorAll('.tl__event[data-title]').forEach(event => {
     event.querySelectorAll('.tl__label, .tl__mark').forEach(target => {
       target.addEventListener('mouseenter', () => showTip(event, target));
-      target.addEventListener('mouseleave', hideTip);
+      target.addEventListener('mouseleave', leaveTarget);
       target.addEventListener('click', () => showTip(event, target));
     });
     const label = event.querySelector('.tl__label');
