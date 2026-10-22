@@ -440,3 +440,18 @@ main {
   height: 18px;
   flex-shrink: 0;
 }
+
+/* Bloc dont la largeur suit celle du titre : les liens se calent sur son bord gauche */
+.page-header__stack {
+  display: table;
+  margin: 0 auto;
+}
+
+.page-header__stack p {
+  width: 0;
+  min-width: 100%;
+}
+
+.page-header__stack .page-header__links {
+  justify-content: flex-start;
+}
