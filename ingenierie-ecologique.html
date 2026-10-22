@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=66">
-  <link rel="stylesheet" href="css/base.css?v=66">
-  <link rel="stylesheet" href="css/components.css?v=66">
-  <link rel="stylesheet" href="css/layout.css?v=66">
+  <link rel="stylesheet" href="css/variables.css?v=76">
+  <link rel="stylesheet" href="css/base.css?v=76">
+  <link rel="stylesheet" href="css/components.css?v=76">
+  <link rel="stylesheet" href="css/layout.css?v=76">
 </head>
 <body>
 
@@ -57,16 +57,32 @@
       </div>
     </div>
 
-    <!-- Sommaire de la page -->
-    <nav class="page-toc" aria-label="Sommaire de la page">
-      <div class="container page-toc__list">
-        <a href="#competences" class="page-toc__link">Compétences clés</a>
-        <a href="#parcours" class="page-toc__link">Mon parcours</a>
-        <a href="#apporter" class="page-toc__link">Ce que je peux apporter</a>
-        <a href="#experiences-terrain" class="page-toc__link">Expériences de terrain</a>
-        <a href="#disponibilite" class="page-toc__link">Disponibilité</a>
-      </div>
-    </nav>
+    <div class="page-sticky">
+      <!-- Sommaire de la page -->
+      <nav class="page-toc" aria-label="Sommaire de la page">
+        <div class="container page-toc__list">
+          <a href="#competences" class="page-toc__link">Compétences</a>
+          <a href="#parcours" class="page-toc__link">Parcours</a>
+          <a href="#apporter" class="page-toc__link">Ce que j&rsquo;apporte</a>
+          <a href="#experiences-terrain" class="page-toc__link">Terrain</a>
+          <a href="#disponibilite" class="page-toc__link">Disponibilité</a>
+        </div>
+      </nav>
+
+      <!-- Postes visés -->
+      <section class="targets-band" aria-label="Postes visés">
+        <div class="container">
+          <h2 class="targets-band__title">Postes visés</h2>
+          <ul class="targets-band__list">
+          <li>Chargée d’études faune</li>
+          <li>Écologue de terrain</li>
+          <li>Chargée de mission biodiversité</li>
+          <li>Chargée de données naturalistes</li>
+          <li>Technicienne de suivi scientifique</li>
+          </ul>
+        </div>
+      </section>
+    </div>
 
     <!-- Bandeau compétences clés -->
     <section id="competences" class="skills-band" aria-labelledby="skills-band-title">
@@ -494,6 +510,6 @@
     </svg>
   </footer>
 
-  <script src="js/main.js?v=35"></script>
+  <script src="js/main.js?v=36"></script>
 </body>
 </html>
