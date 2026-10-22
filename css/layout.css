@@ -440,3 +440,15 @@ main {
   height: 18px;
   flex-shrink: 0;
 }
+
+/* Postes visés (sous la phrase d'introduction du bandeau) */
+.page-header .page-header__targets {
+  margin-top: var(--space-sm);
+  font-size: var(--text-small);
+  color: var(--earth-600);
+}
+
+.page-header__targets strong {
+  color: var(--green-700);
+  font-weight: 600;
+}
