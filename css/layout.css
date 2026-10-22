@@ -441,14 +441,63 @@ main {
   flex-shrink: 0;
 }
 
-/* Postes visés (sous la phrase d'introduction du bandeau) */
-.page-header .page-header__targets {
-  margin-top: var(--space-sm);
-  font-size: var(--text-small);
-  color: var(--earth-600);
+/* Bande « Postes visés » sous le bandeau d'en-tête (pages domaines) */
+.targets-band {
+  background: var(--green-900);
+  padding: var(--space-md) 0;
 }
 
-.page-header__targets strong {
-  color: var(--green-700);
+.targets-band .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.targets-band__title {
+  margin: 0;
+  font-family: inherit;
+  font-size: var(--text-small);
   font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green-200);
+  white-space: nowrap;
+}
+
+.targets-band__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs) 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-small);
+  color: var(--white);
+}
+
+.targets-band__list {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .targets-band__list {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .targets-band__list li:not(:last-child)::after {
+    content: "\00b7";
+    margin: 0 var(--space-sm);
+    opacity: 0.6;
+  }
+
+  .targets-band .container {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-lg);
+  }
 }
