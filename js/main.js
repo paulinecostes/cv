@@ -37,6 +37,16 @@ if (burger && navLinks) {
   });
 }
 
+// Bloc collant (sommaire + postes visés) : version compacte une fois collé en haut
+const pageSticky = document.querySelector('.page-sticky');
+if (pageSticky) {
+  const updateSticky = () => {
+    pageSticky.classList.toggle('is-stuck', pageSticky.getBoundingClientRect().top <= 0);
+  };
+  window.addEventListener('scroll', updateSticky, { passive: true });
+  updateSticky();
+}
+
 // Sommaire de la page : surligne la section en cours de lecture
 const tocLinks = [...document.querySelectorAll('.page-toc__link')];
 if (tocLinks.length) {
@@ -48,7 +58,7 @@ if (tocLinks.length) {
     // dernière section dont le haut est passé sous l'en-tête et le sommaire
     let index = 0;
     targets.forEach((target, i) => {
-      if (target && target.getBoundingClientRect().top <= 140) index = i;
+      if (target && target.getBoundingClientRect().top <= 150) index = i;
     });
     if (index === current) return;
     current = index;

@@ -1,7 +1,7 @@
 /* ===== Navigation ===== */
 
 .site-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -441,7 +441,7 @@
 
 /* Carte ciblée par un lien d'ancre */
 [id^="terrain-"] {
-  scroll-margin-top: 136px;
+  scroll-margin-top: 130px;
 }
 
 [id^="terrain-"]:target {
@@ -1399,7 +1399,7 @@
 }
 
 .skill-star__panel {
-  scroll-margin-top: 136px;
+  scroll-margin-top: 130px;
 }
 
 .skill-star__panel[hidden] {
@@ -1526,12 +1526,22 @@
 
 /* ===== Sommaire de la page (sous l'en-tête, reste visible au défilement) ===== */
 
+.page-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
 .page-toc {
   position: sticky;
-  top: 64px;
+  top: 0;
   z-index: 90;
   background: var(--white);
   border-bottom: 1px solid var(--green-200);
+}
+
+.page-sticky .page-toc {
+  position: static;
 }
 
 .page-toc__list {
@@ -1550,7 +1560,6 @@
 @media (min-width: 1024px) {
   .page-toc__list {
     justify-content: center;
-    flex-wrap: wrap;
   }
 }
 
@@ -1583,7 +1592,7 @@
 
 /* Sections visées par le sommaire : ne pas passer sous l'en-tête et le sommaire */
 main section[id] {
-  scroll-margin-top: 112px;
+  scroll-margin-top: 120px;
 }
 
 /* Carte avec plusieurs photos : grille dans la colonne de gauche */

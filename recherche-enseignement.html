@@ -14,10 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/variables.css?v=71">
-  <link rel="stylesheet" href="css/base.css?v=71">
-  <link rel="stylesheet" href="css/components.css?v=71">
-  <link rel="stylesheet" href="css/layout.css?v=71">
+  <link rel="stylesheet" href="css/variables.css?v=75">
+  <link rel="stylesheet" href="css/base.css?v=75">
+  <link rel="stylesheet" href="css/components.css?v=75">
+  <link rel="stylesheet" href="css/layout.css?v=75">
 </head>
 <body>
 
@@ -43,20 +43,6 @@
 
   <main>
 
-    <!-- Postes visés -->
-    <section class="targets-band" aria-label="Postes visés">
-      <div class="container">
-        <h2 class="targets-band__title">Postes visés</h2>
-        <ul class="targets-band__list">
-        <li>Post-doctorante</li>
-        <li>Ingénieure de recherche</li>
-        <li>Research project manager</li>
-        <li>Chargée de mission scientifique</li>
-        <li>ATER</li>
-        </ul>
-      </div>
-    </section>
-
     <!-- Page header -->
     <div class="container page-header__with-photo">
         <img class="page-header__photo" src="presentation_these2.jpg" alt="Pauline Costes sur le terrain, en veste de pluie" width="140" height="140">
@@ -71,19 +57,35 @@
       </div>
     </div>
 
-    <!-- Sommaire de la page -->
-    <nav class="page-toc" aria-label="Sommaire de la page">
-      <div class="container page-toc__list">
-        <a href="#competences" class="page-toc__link">Compétences clés</a>
-        <a href="#parcours" class="page-toc__link">Mon parcours</a>
-        <a href="#apporter" class="page-toc__link">Ce que je peux apporter</a>
-        <a href="#recherche" class="page-toc__link">Recherche</a>
-        <a href="#enseignement" class="page-toc__link">Enseignement &amp; encadrement</a>
-        <a href="#publications" class="page-toc__link">Publications</a>
-        <a href="#conferences" class="page-toc__link">Conférences</a>
-        <a href="#prix" class="page-toc__link">Prix &amp; distinctions</a>
-      </div>
-    </nav>
+    <div class="page-sticky">
+      <!-- Sommaire de la page -->
+      <nav class="page-toc" aria-label="Sommaire de la page">
+        <div class="container page-toc__list">
+          <a href="#competences" class="page-toc__link">Compétences</a>
+          <a href="#parcours" class="page-toc__link">Parcours</a>
+          <a href="#apporter" class="page-toc__link">Ce que j&rsquo;apporte</a>
+          <a href="#recherche" class="page-toc__link">Recherche</a>
+          <a href="#enseignement" class="page-toc__link">Enseignement</a>
+          <a href="#publications" class="page-toc__link">Publications</a>
+          <a href="#conferences" class="page-toc__link">Conférences</a>
+          <a href="#prix" class="page-toc__link">Prix</a>
+        </div>
+      </nav>
+
+      <!-- Postes visés -->
+      <section class="targets-band" aria-label="Postes visés">
+        <div class="container">
+          <h2 class="targets-band__title">Postes visés</h2>
+          <ul class="targets-band__list">
+          <li>Post-doctorante</li>
+          <li>Ingénieure de recherche</li>
+          <li>Research project manager</li>
+          <li>Chargée de mission scientifique</li>
+          <li>ATER</li>
+          </ul>
+        </div>
+      </section>
+    </div>
 
     <!-- Bandeau compétences clés -->
     <section id="competences" class="skills-band" aria-labelledby="skills-band-title">
@@ -870,6 +872,6 @@
     </svg>
   </footer>
 
-  <script src="js/main.js?v=35"></script>
+  <script src="js/main.js?v=36"></script>
 </body>
 </html>
