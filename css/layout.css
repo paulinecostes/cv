@@ -324,6 +324,10 @@ main {
   .page-header__with-photo p {
     margin: 0;
   }
+
+  .page-header__with-photo .page-header__links {
+    justify-content: flex-start;
+  }
 }
 
 /* ===== SVG decorations ===== */
