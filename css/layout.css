@@ -305,8 +305,8 @@ main {
 
 .page-header__photo {
   width: 140px;
-  height: 140px;
-  border-radius: var(--radius-full);
+  height: 180px;
+  border-radius: 12px;
   border: 4px solid var(--white);
   box-shadow: 0 0 0 1px var(--green-200), var(--shadow-md);
   object-fit: cover;
@@ -439,19 +439,4 @@ main {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-}
-
-/* Bloc dont la largeur suit celle du titre : les liens se calent sur son bord gauche */
-.page-header__stack {
-  display: table;
-  margin: 0 auto;
-}
-
-.page-header__stack p {
-  width: 0;
-  min-width: 100%;
-}
-
-.page-header__stack .page-header__links {
-  justify-content: flex-start;
 }
